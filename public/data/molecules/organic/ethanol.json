@@ -1,0 +1,56 @@
+{
+  "molecule": "Ethanol",
+  "formula": "C₂H₅OH",
+  "description": "The type of alcohol found in alcoholic beverages. Also used as fuel and solvent. Contains both tetrahedral carbons and bent oxygen.",
+  "category": "organic",
+  "geometry": "Mixed (Tetrahedral C, Bent O)",
+  "bondAngles": "109.5° (C), 104.5° (O)",
+  "atoms": [
+    {
+      "element": "C",
+      "position": [0, 0, 0]
+    },
+    {
+      "element": "C",
+      "position": [1.54, 0, 0]
+    },
+    {
+      "element": "O",
+      "position": [2.24, 1.26, 0]
+    },
+    {
+      "element": "H",
+      "position": [-0.36, 1.03, 0]
+    },
+    {
+      "element": "H",
+      "position": [-0.36, -0.51, 0.89]
+    },
+    {
+      "element": "H",
+      "position": [-0.36, -0.51, -0.89]
+    },
+    {
+      "element": "H",
+      "position": [1.9, -0.51, 0.89]
+    },
+    {
+      "element": "H",
+      "position": [1.9, -0.51, -0.89]
+    },
+    {
+      "element": "H",
+      "position": [3.2, 1.26, 0]
+    }
+  ],
+  "bonds": [
+    { "from": 0, "to": 1, "type": "single" },
+    { "from": 1, "to": 2, "type": "single" },
+    { "from": 0, "to": 3, "type": "single" },
+    { "from": 0, "to": 4, "type": "single" },
+    { "from": 0, "to": 5, "type": "single" },
+    { "from": 1, "to": 6, "type": "single" },
+    { "from": 1, "to": 7, "type": "single" },
+    { "from": 2, "to": 8, "type": "single" }
+  ]
+}

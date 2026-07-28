@@ -1,0 +1,72 @@
+{
+  "molecule": "Benzene",
+  "formula": "C₆H₆",
+  "description": "An aromatic hydrocarbon with a ring of six carbon atoms. Planar hexagonal geometry with delocalized π electrons.",
+  "category": "organic",
+  "geometry": "Planar Hexagonal",
+  "bondAngles": "120°",
+  "atoms": [
+    {
+      "element": "C",
+      "position": [1.39, 0, 0]
+    },
+    {
+      "element": "C",
+      "position": [0.695, 1.204, 0]
+    },
+    {
+      "element": "C",
+      "position": [-0.695, 1.204, 0]
+    },
+    {
+      "element": "C",
+      "position": [-1.39, 0, 0]
+    },
+    {
+      "element": "C",
+      "position": [-0.695, -1.204, 0]
+    },
+    {
+      "element": "C",
+      "position": [0.695, -1.204, 0]
+    },
+    {
+      "element": "H",
+      "position": [2.47, 0, 0]
+    },
+    {
+      "element": "H",
+      "position": [1.235, 2.14, 0]
+    },
+    {
+      "element": "H",
+      "position": [-1.235, 2.14, 0]
+    },
+    {
+      "element": "H",
+      "position": [-2.47, 0, 0]
+    },
+    {
+      "element": "H",
+      "position": [-1.235, -2.14, 0]
+    },
+    {
+      "element": "H",
+      "position": [1.235, -2.14, 0]
+    }
+  ],
+  "bonds": [
+    { "from": 0, "to": 1, "type": "double" },
+    { "from": 1, "to": 2, "type": "single" },
+    { "from": 2, "to": 3, "type": "double" },
+    { "from": 3, "to": 4, "type": "single" },
+    { "from": 4, "to": 5, "type": "double" },
+    { "from": 5, "to": 0, "type": "single" },
+    { "from": 0, "to": 6, "type": "single" },
+    { "from": 1, "to": 7, "type": "single" },
+    { "from": 2, "to": 8, "type": "single" },
+    { "from": 3, "to": 9, "type": "single" },
+    { "from": 4, "to": 10, "type": "single" },
+    { "from": 5, "to": 11, "type": "single" }
+  ]
+}

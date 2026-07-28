@@ -1,0 +1,19 @@
+{
+  "molecule": "Sodium Chloride",
+  "formula": "NaCl",
+  "description": "Common table salt. An ionic compound with cubic crystal structure.",
+  "category": "inorganic",
+  "atoms": [
+    {
+      "element": "Na",
+      "position": [0, 0, 0],
+      "color": "#ab5cf2"
+    },
+    {
+      "element": "Cl",
+      "position": [2.82, 0, 0],
+      "color": "#1dd1a1"
+    }
+  ],
+  "bonds": [{ "from": 0, "to": 1 }]
+}

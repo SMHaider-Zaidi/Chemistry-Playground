@@ -1,0 +1,51 @@
+{
+  "molecule": "Sulfuric Acid",
+  "formula": "H₂SO₄",
+  "description": "A strong acid widely used in industrial processes.",
+  "category": "inorganic",
+  "atoms": [
+    {
+      "element": "S",
+      "position": [0, 0, 0],
+      "color": "#feca57"
+    },
+    {
+      "element": "O",
+      "position": [1.5, 1.0, 0],
+      "color": "#ff0000"
+    },
+    {
+      "element": "O",
+      "position": [-1.5, 1.0, 0],
+      "color": "#ff0000"
+    },
+    {
+      "element": "O",
+      "position": [1.5, -1.0, 0],
+      "color": "#ff0000"
+    },
+    {
+      "element": "O",
+      "position": [-1.5, -1.0, 0],
+      "color": "#ff0000"
+    },
+    {
+      "element": "H",
+      "position": [2.3, 1.8, 0],
+      "color": "#ffffff"
+    },
+    {
+      "element": "H",
+      "position": [-2.3, 1.8, 0],
+      "color": "#ffffff"
+    }
+  ],
+  "bonds": [
+    { "from": 0, "to": 1 },
+    { "from": 0, "to": 2 },
+    { "from": 0, "to": 3 },
+    { "from": 0, "to": 4 },
+    { "from": 1, "to": 5 },
+    { "from": 2, "to": 6 }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "molecule": "Methane",
+  "formula": "CH₄",
+  "description": "The simplest hydrocarbon and main component of natural gas. Tetrahedral geometry.",
+  "category": "basic",
+  "geometry": "Tetrahedral",
+  "bondAngles": "109.5°",
+  "atoms": [
+    {
+      "element": "C",
+      "position": [0, 0, 0]
+    },
+    {
+      "element": "H",
+      "position": [1.09, 0, 0]
+    },
+    {
+      "element": "H",
+      "position": [-0.36, 1.03, 0]
+    },
+    {
+      "element": "H",
+      "position": [-0.36, -0.51, 0.89]
+    },
+    {
+      "element": "H",
+      "position": [-0.36, -0.51, -0.89]
+    }
+  ],
+  "bonds": [
+    { "from": 0, "to": 1, "type": "single" },
+    { "from": 0, "to": 2, "type": "single" },
+    { "from": 0, "to": 3, "type": "single" },
+    { "from": 0, "to": 4, "type": "single" }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "molecule": "Glucose",
+  "formula": "C₆H₁₂O₆",
+  "description": "A simple sugar that is an important energy source in living organisms.",
+  "category": "organic",
+  "atoms": [
+    {
+      "element": "C",
+      "position": [0, 0, 0],
+      "color": "#404040"
+    },
+    {
+      "element": "C",
+      "position": [1.54, 0, 0],
+      "color": "#404040"
+    },
+    {
+      "element": "C",
+      "position": [2.31, 1.26, 0],
+      "color": "#404040"
+    },
+    {
+      "element": "C",
+      "position": [1.54, 2.52, 0],
+      "color": "#404040"
+    },
+    {
+      "element": "C",
+      "position": [0, 2.52, 0],
+      "color": "#404040"
+    },
+    {
+      "element": "C",
+      "position": [-0.77, 1.26, 0],
+      "color": "#404040"
+    },
+    {
+      "element": "O",
+      "position": [-0.77, -1.26, 0],
+      "color": "#ff0000"
+    },
+    {
+      "element": "O",
+      "position": [2.31, -1.26, 0],
+      "color": "#ff0000"
+    },
+    {
+      "element": "O",
+      "position": [3.85, 1.26, 0],
+      "color": "#ff0000"
+    },
+    {
+      "element": "O",
+      "position": [2.31, 3.78, 0],
+      "color": "#ff0000"
+    },
+    {
+      "element": "O",
+      "position": [-0.77, 3.78, 0],
+      "color": "#ff0000"
+    },
+    {
+      "element": "O",
+      "position": [-2.31, 1.26, 0],
+      "color": "#ff0000"
+    }
+  ],
+  "bonds": [
+    { "from": 0, "to": 1 },
+    { "from": 1, "to": 2 },
+    { "from": 2, "to": 3 },
+    { "from": 3, "to": 4 },
+    { "from": 4, "to": 5 },
+    { "from": 5, "to": 0 },
+    { "from": 0, "to": 6 },
+    { "from": 1, "to": 7 },
+    { "from": 2, "to": 8 },
+    { "from": 3, "to": 9 },
+    { "from": 4, "to": 10 },
+    { "from": 5, "to": 11 }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "molecule": "Ammonia",
+  "formula": "NH₃",
+  "description": "A colorless gas with a characteristic pungent smell. Trigonal pyramidal geometry due to lone pair on nitrogen.",
+  "category": "basic",
+  "geometry": "Trigonal Pyramidal",
+  "bondAngles": "107°",
+  "atoms": [
+    {
+      "element": "N",
+      "position": [0, 0, 0]
+    },
+    {
+      "element": "H",
+      "position": [0.94, 0, 0]
+    },
+    {
+      "element": "H",
+      "position": [-0.47, 0.81, 0]
+    },
+    {
+      "element": "H",
+      "position": [-0.47, -0.41, 0.71]
+    }
+  ],
+  "bonds": [
+    { "from": 0, "to": 1, "type": "single" },
+    { "from": 0, "to": 2, "type": "single" },
+    { "from": 0, "to": 3, "type": "single" }
+  ]
+}

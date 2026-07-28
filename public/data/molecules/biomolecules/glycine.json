@@ -1,0 +1,69 @@
+{
+  "molecule": "Glycine",
+  "formula": "C₂H₅NO₂",
+  "description": "The simplest amino acid. Building block of proteins.",
+  "category": "biomolecules",
+  "atoms": [
+    {
+      "element": "C",
+      "position": [0, 0, 0],
+      "color": "#404040"
+    },
+    {
+      "element": "C",
+      "position": [1.54, 0, 0],
+      "color": "#404040"
+    },
+    {
+      "element": "N",
+      "position": [-0.77, 1.33, 0],
+      "color": "#0000ff"
+    },
+    {
+      "element": "O",
+      "position": [2.31, 1.26, 0],
+      "color": "#ff0000"
+    },
+    {
+      "element": "O",
+      "position": [2.31, -1.26, 0],
+      "color": "#ff0000"
+    },
+    {
+      "element": "H",
+      "position": [-0.36, -1.03, 0],
+      "color": "#ffffff"
+    },
+    {
+      "element": "H",
+      "position": [-0.36, -0.51, 0.89],
+      "color": "#ffffff"
+    },
+    {
+      "element": "H",
+      "position": [-1.73, 1.33, 0],
+      "color": "#ffffff"
+    },
+    {
+      "element": "H",
+      "position": [-0.41, 2.29, 0],
+      "color": "#ffffff"
+    },
+    {
+      "element": "H",
+      "position": [3.27, -1.26, 0],
+      "color": "#ffffff"
+    }
+  ],
+  "bonds": [
+    { "from": 0, "to": 1 },
+    { "from": 0, "to": 2 },
+    { "from": 1, "to": 3 },
+    { "from": 1, "to": 4 },
+    { "from": 0, "to": 5 },
+    { "from": 0, "to": 6 },
+    { "from": 2, "to": 7 },
+    { "from": 2, "to": 8 },
+    { "from": 4, "to": 9 }
+  ]
+}
