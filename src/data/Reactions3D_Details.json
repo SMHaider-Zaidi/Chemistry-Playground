@@ -1,0 +1,1692 @@
+[
+  {
+    "molecule": "hydrogen",
+    "formula": "H2",
+    "category": "inorganic",
+    "description": "A colorless, odorless, highly flammable diatomic gas.",
+    "atoms": [{"element":"H","x":0,"y":0,"z":0},{"element":"H","x":0,"y":0,"z":0.74}],
+    "bonds": [{"source":0,"target":1,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "oxygen",
+    "formula": "O2",
+    "category": "inorganic",
+    "description": "A reactive diatomic gas essential for respiration.",
+    "atoms": [{"element":"O","x":0,"y":0,"z":0},{"element":"O","x":0,"y":0,"z":1.21}],
+    "bonds": [{"source":0,"target":1,"order":2}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "water",
+    "formula": "H2O",
+    "category": "inorganic",
+    "description": "A ubiquitous polar solvent and fundamental liquid for life.",
+    "atoms": [{"element":"O","x":0,"y":0,"z":0},{"element":"H","x":0.76,"y":0.59,"z":0},{"element":"H","x":-0.76,"y":0.59,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":0,"target":2,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "carbon dioxide",
+    "formula": "CO2",
+    "category": "inorganic",
+    "description": "A colorless greenhouse gas produced by respiration and combustion.",
+    "atoms": [{"element":"C","x":0,"y":0,"z":0},{"element":"O","x":0,"y":0,"z":1.16},{"element":"O","x":0,"y":0,"z":-1.16}],
+    "bonds": [{"source":0,"target":1,"order":2},{"source":0,"target":2,"order":2}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "carbon monoxide",
+    "formula": "CO",
+    "category": "inorganic",
+    "description": "A toxic, colorless gas formed by incomplete combustion.",
+    "atoms": [{"element":"C","x":0,"y":0,"z":0},{"element":"O","x":0,"y":0,"z":1.13}],
+    "bonds": [{"source":0,"target":1,"order":3}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "ammonia",
+    "formula": "NH3",
+    "category": "inorganic",
+    "description": "A colorless gas with a pungent smell, widely used in fertilizers.",
+    "atoms": [{"element":"N","x":0,"y":0,"z":0},{"element":"H","x":0.94,"y":0,"z":-0.38},{"element":"H","x":-0.47,"y":0.81,"z":-0.38},{"element":"H","x":-0.47,"y":-0.81,"z":-0.38}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":0,"target":2,"order":1},{"source":0,"target":3,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "methane",
+    "formula": "CH4",
+    "category": "organic",
+    "description": "The simplest alkane and primary component of natural gas.",
+    "atoms": [{"element":"C","x":0,"y":0,"z":0},{"element":"H","x":1.09,"y":0,"z":0},{"element":"H","x":-0.36,"y":1.03,"z":0},{"element":"H","x":-0.36,"y":-0.51,"z":0.89},{"element":"H","x":-0.36,"y":-0.51,"z":-0.89}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":0,"target":2,"order":1},{"source":0,"target":3,"order":1},{"source":0,"target":4,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "ethene",
+    "formula": "C2H4",
+    "category": "organic",
+    "description": "The simplest alkene, acting as a crucial plant hormone and industrial monomer.",
+    "atoms": [{"element":"C","x":0,"y":0,"z":0.67},{"element":"C","x":0,"y":0,"z":-0.67},{"element":"H","x":0.92,"y":0,"z":1.23},{"element":"H","x":-0.92,"y":0,"z":1.23},{"element":"H","x":0.92,"y":0,"z":-1.23},{"element":"H","x":-0.92,"y":0,"z":-1.23}],
+    "bonds": [{"source":0,"target":1,"order":2},{"source":0,"target":2,"order":1},{"source":0,"target":3,"order":1},{"source":1,"target":4,"order":1},{"source":1,"target":5,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "ethane",
+    "formula": "C2H6",
+    "category": "organic",
+    "description": "A simple gaseous alkane found in natural gas.",
+    "atoms": [{"element":"C","x":0,"y":0,"z":0.77},{"element":"C","x":0,"y":0,"z":-0.77},{"element":"H","x":1.02,"y":0,"z":1.16},{"element":"H","x":-0.51,"y":0.88,"z":1.16},{"element":"H","x":-0.51,"y":-0.88,"z":1.16},{"element":"H","x":-1.02,"y":0,"z":-1.16},{"element":"H","x":0.51,"y":0.88,"z":-1.16},{"element":"H","x":0.51,"y":-0.88,"z":-1.16}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":0,"target":2,"order":1},{"source":0,"target":3,"order":1},{"source":0,"target":4,"order":1},{"source":1,"target":5,"order":1},{"source":1,"target":6,"order":1},{"source":1,"target":7,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "ethyne",
+    "formula": "C2H2",
+    "category": "organic",
+    "description": "Also known as acetylene, a hydrocarbon with a linear carbon-carbon triple bond.",
+    "atoms": [{"element":"C","x":0,"y":0,"z":0.60},{"element":"C","x":0,"y":0,"z":-0.60},{"element":"H","x":0,"y":0,"z":1.66},{"element":"H","x":0,"y":0,"z":-1.66}],
+    "bonds": [{"source":0,"target":1,"order":3},{"source":0,"target":2,"order":1},{"source":1,"target":3,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "formaldehyde",
+    "formula": "HCHO",
+    "category": "organic",
+    "description": "The simplest aldehyde, used as a precursor to many materials.",
+    "atoms": [{"element":"C","x":0,"y":0,"z":0},{"element":"O","x":0,"y":1.21,"z":0},{"element":"H","x":0.94,"y":-0.60,"z":0},{"element":"H","x":-0.94,"y":-0.60,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":2},{"source":0,"target":2,"order":1},{"source":0,"target":3,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "ethanol",
+    "formula": "C2H5OH",
+    "category": "organic",
+    "description": "A volatile, flammable liquid commonly known as alcohol.",
+    "atoms": [{"element":"C","x":-0.88,"y":-0.20,"z":0},{"element":"C","x":0.46,"y":0.56,"z":0},{"element":"O","x":1.53,"y":-0.35,"z":0},{"element":"H","x":-0.93,"y":-0.83,"z":0.89},{"element":"H","x":-0.93,"y":-0.83,"z":-0.89},{"element":"H","x":-1.74,"y":0.48,"z":0},{"element":"H","x":0.48,"y":1.20,"z":0.88},{"element":"H","x":0.48,"y":1.20,"z":-0.88},{"element":"H","x":2.31,"y":0.21,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":1,"target":2,"order":1},{"source":0,"target":3,"order":1},{"source":0,"target":4,"order":1},{"source":0,"target":5,"order":1},{"source":1,"target":6,"order":1},{"source":1,"target":7,"order":1},{"source":2,"target":8,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "acetic acid",
+    "formula": "CH3COOH",
+    "category": "organic",
+    "description": "A simple carboxylic acid that gives vinegar its sour taste.",
+    "atoms": [{"element":"C","x":-0.73,"y":-0.09,"z":0},{"element":"C","x":0.69,"y":0.11,"z":0},{"element":"O","x":1.28,"y":1.16,"z":0},{"element":"O","x":1.36,"y":-1.05,"z":0},{"element":"H","x":-1.08,"y":-0.61,"z":-0.89},{"element":"H","x":-1.08,"y":-0.61,"z":0.89},{"element":"H","x":-1.18,"y":0.91,"z":0},{"element":"H","x":2.32,"y":-0.95,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":1,"target":2,"order":2},{"source":1,"target":3,"order":1},{"source":0,"target":4,"order":1},{"source":0,"target":5,"order":1},{"source":0,"target":6,"order":1},{"source":3,"target":7,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "acetone",
+    "formula": "CH3COCH3",
+    "category": "organic",
+    "description": "The simplest ketone, widely used as an organic solvent.",
+    "atoms": [{"element":"C","x":0,"y":0.52,"z":0},{"element":"O","x":0,"y":1.74,"z":0},{"element":"C","x":-1.28,"y":-0.33,"z":0},{"element":"C","x":1.28,"y":-0.33,"z":0},{"element":"H","x":-1.28,"y":-0.96,"z":-0.88},{"element":"H","x":-1.28,"y":-0.96,"z":0.88},{"element":"H","x":-2.17,"y":0.30,"z":0},{"element":"H","x":1.28,"y":-0.96,"z":-0.88},{"element":"H","x":1.28,"y":-0.96,"z":0.88},{"element":"H","x":2.17,"y":0.30,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":2},{"source":0,"target":2,"order":1},{"source":0,"target":3,"order":1},{"source":2,"target":4,"order":1},{"source":2,"target":5,"order":1},{"source":2,"target":6,"order":1},{"source":3,"target":7,"order":1},{"source":3,"target":8,"order":1},{"source":3,"target":9,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "acetaldehyde",
+    "formula": "CH3CHO",
+    "category": "organic",
+    "description": "An organic compound commonly occurring in coffee, bread, and ripe fruit.",
+    "atoms": [{"element":"C","x":-0.64,"y":-0.27,"z":0},{"element":"C","x":0.78,"y":0.22,"z":0},{"element":"O","x":1.79,"y":-0.44,"z":0},{"element":"H","x":0.85,"y":1.33,"z":0},{"element":"H","x":-0.80,"y":-0.90,"z":0.88},{"element":"H","x":-0.80,"y":-0.90,"z":-0.88},{"element":"H","x":-1.38,"y":0.53,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":1,"target":2,"order":2},{"source":1,"target":3,"order":1},{"source":0,"target":4,"order":1},{"source":0,"target":5,"order":1},{"source":0,"target":6,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "benzene",
+    "formula": "C6H6",
+    "category": "organic",
+    "description": "A standard aromatic hydrocarbon with a planar six-carbon ring.",
+    "atoms": [{"element":"C","x":1.40,"y":0,"z":0},{"element":"C","x":0.70,"y":1.21,"z":0},{"element":"C","x":-0.70,"y":1.21,"z":0},{"element":"C","x":-1.40,"y":0,"z":0},{"element":"C","x":-0.70,"y":-1.21,"z":0},{"element":"C","x":0.70,"y":-1.21,"z":0},{"element":"H","x":2.48,"y":0,"z":0},{"element":"H","x":1.24,"y":2.15,"z":0},{"element":"H","x":-1.24,"y":2.15,"z":0},{"element":"H","x":-2.48,"y":0,"z":0},{"element":"H","x":-1.24,"y":-2.15,"z":0},{"element":"H","x":1.24,"y":-2.15,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":2},{"source":1,"target":2,"order":1},{"source":2,"target":3,"order":2},{"source":3,"target":4,"order":1},{"source":4,"target":5,"order":2},{"source":5,"target":0,"order":1},{"source":0,"target":6,"order":1},{"source":1,"target":7,"order":1},{"source":2,"target":8,"order":1},{"source":3,"target":9,"order":1},{"source":4,"target":10,"order":1},{"source":5,"target":11,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "phenol",
+    "formula": "C6H5OH",
+    "category": "organic",
+    "description": "An aromatic compound with a hydroxyl group attached to a benzene ring.",
+    "atoms": [{"element":"C","x":1.20,"y":0,"z":0},{"element":"C","x":0.60,"y":1.04,"z":0},{"element":"C","x":-0.60,"y":1.04,"z":0},{"element":"C","x":-1.20,"y":0,"z":0},{"element":"C","x":-0.60,"y":-1.04,"z":0},{"element":"C","x":0.60,"y":-1.04,"z":0},{"element":"O","x":2.55,"y":0,"z":0},{"element":"H","x":3.00,"y":0.80,"z":0},{"element":"H","x":1.10,"y":1.90,"z":0},{"element":"H","x":-1.10,"y":1.90,"z":0},{"element":"H","x":-2.28,"y":0,"z":0},{"element":"H","x":-1.10,"y":-1.90,"z":0},{"element":"H","x":1.10,"y":-1.90,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":2},{"source":1,"target":2,"order":1},{"source":2,"target":3,"order":2},{"source":3,"target":4,"order":1},{"source":4,"target":5,"order":2},{"source":5,"target":0,"order":1},{"source":0,"target":6,"order":1},{"source":6,"target":7,"order":1},{"source":1,"target":8,"order":1},{"source":2,"target":9,"order":1},{"source":3,"target":10,"order":1},{"source":4,"target":11,"order":1},{"source":5,"target":12,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "urea",
+    "formula": "CO(NH2)2",
+    "category": "organic",
+    "description": "A diamide of carbonic acid, primarily used in fertilizers.",
+    "atoms": [{"element":"C","x":0,"y":0,"z":0},{"element":"O","x":0,"y":1.22,"z":0},{"element":"N","x":1.15,"y":-0.60,"z":0},{"element":"N","x":-1.15,"y":-0.60,"z":0},{"element":"H","x":2.05,"y":-0.15,"z":0},{"element":"H","x":1.15,"y":-1.60,"z":0},{"element":"H","x":-2.05,"y":-0.15,"z":0},{"element":"H","x":-1.15,"y":-1.60,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":2},{"source":0,"target":2,"order":1},{"source":0,"target":3,"order":1},{"source":2,"target":4,"order":1},{"source":2,"target":5,"order":1},{"source":3,"target":6,"order":1},{"source":3,"target":7,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "chloroform",
+    "formula": "CHCl3",
+    "category": "organic",
+    "description": "A dense liquid once widely used as an anesthetic.",
+    "atoms": [{"element":"C","x":0,"y":0,"z":0},{"element":"H","x":0,"y":0,"z":1.09},{"element":"Cl","x":1.63,"y":0,"z":-0.54},{"element":"Cl","x":-0.82,"y":1.41,"z":-0.54},{"element":"Cl","x":-0.82,"y":-1.41,"z":-0.54}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":0,"target":2,"order":1},{"source":0,"target":3,"order":1},{"source":0,"target":4,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "carbon tetrachloride",
+    "formula": "CCl4",
+    "category": "organic",
+    "description": "A toxic liquid formerly used as a refrigerant and cleaning agent.",
+    "atoms": [{"element":"C","x":0,"y":0,"z":0},{"element":"Cl","x":1.66,"y":0,"z":-0.59},{"element":"Cl","x":-0.83,"y":1.44,"z":-0.59},{"element":"Cl","x":-0.83,"y":-1.44,"z":-0.59},{"element":"Cl","x":0,"y":0,"z":1.76}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":0,"target":2,"order":1},{"source":0,"target":3,"order":1},{"source":0,"target":4,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "methyl chloride",
+    "formula": "CH3Cl",
+    "category": "organic",
+    "description": "A colorless, flammable gas also called chloromethane.",
+    "atoms": [{"element":"C","x":0,"y":0,"z":0},{"element":"Cl","x":0,"y":0,"z":1.78},{"element":"H","x":1.03,"y":0,"z":-0.36},{"element":"H","x":-0.51,"y":0.89,"z":-0.36},{"element":"H","x":-0.51,"y":-0.89,"z":-0.36}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":0,"target":2,"order":1},{"source":0,"target":3,"order":1},{"source":0,"target":4,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "nitrogen",
+    "formula": "N2",
+    "category": "inorganic",
+    "description": "An unreactive diatomic gas comprising most of Earths atmosphere.",
+    "atoms": [{"element":"N","x":0,"y":0,"z":0},{"element":"N","x":0,"y":0,"z":1.10}],
+    "bonds": [{"source":0,"target":1,"order":3}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "chlorine",
+    "formula": "Cl2",
+    "category": "inorganic",
+    "description": "A toxic, yellow-green diatomic gas used as a disinfectant.",
+    "atoms": [{"element":"Cl","x":0,"y":0,"z":0},{"element":"Cl","x":0,"y":0,"z":1.99}],
+    "bonds": [{"source":0,"target":1,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "bromine",
+    "formula": "Br2",
+    "category": "inorganic",
+    "description": "A volatile red-brown liquid halogen at room temperature.",
+    "atoms": [{"element":"Br","x":0,"y":0,"z":0},{"element":"Br","x":0,"y":0,"z":2.28}],
+    "bonds": [{"source":0,"target":1,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "iodine",
+    "formula": "I2",
+    "category": "inorganic",
+    "description": "A halogen that forms a deep purple vapor when heated.",
+    "atoms": [{"element":"I","x":0,"y":0,"z":0},{"element":"I","x":0,"y":0,"z":2.66}],
+    "bonds": [{"source":0,"target":1,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "fluorine",
+    "formula": "F2",
+    "category": "inorganic",
+    "description": "A highly reactive, pale yellow diatomic gas.",
+    "atoms": [{"element":"F","x":0,"y":0,"z":0},{"element":"F","x":0,"y":0,"z":1.42}],
+    "bonds": [{"source":0,"target":1,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "hydrogen chloride",
+    "formula": "HCl",
+    "category": "inorganic",
+    "description": "A colorless gas that forms hydrochloric acid in water.",
+    "atoms": [{"element":"H","x":0,"y":0,"z":0},{"element":"Cl","x":0,"y":0,"z":1.27}],
+    "bonds": [{"source":0,"target":1,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "hydrogen bromide",
+    "formula": "HBr",
+    "category": "inorganic",
+    "description": "A diatomic molecule forming hydrobromic acid in water.",
+    "atoms": [{"element":"H","x":0,"y":0,"z":0},{"element":"Br","x":0,"y":0,"z":1.41}],
+    "bonds": [{"source":0,"target":1,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "hydrogen iodide",
+    "formula": "HI",
+    "category": "inorganic",
+    "description": "A diatomic gas that forms a strong acid in aqueous solution.",
+    "atoms": [{"element":"H","x":0,"y":0,"z":0},{"element":"I","x":0,"y":0,"z":1.61}],
+    "bonds": [{"source":0,"target":1,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "hydrogen sulfide",
+    "formula": "H2S",
+    "category": "inorganic",
+    "description": "A colorless chalcogen hydride gas with a foul odor.",
+    "atoms": [{"element":"S","x":0,"y":0,"z":0},{"element":"H","x":0.96,"y":0.96,"z":0},{"element":"H","x":-0.96,"y":0.96,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":0,"target":2,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "sulfur dioxide",
+    "formula": "SO2",
+    "category": "inorganic",
+    "description": "A toxic gas with a pungent, irritating smell.",
+    "atoms": [{"element":"S","x":0,"y":0,"z":0},{"element":"O","x":1.24,"y":-0.72,"z":0},{"element":"O","x":-1.24,"y":-0.72,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":2},{"source":0,"target":2,"order":2}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "sulfur trioxide",
+    "formula": "SO3",
+    "category": "inorganic",
+    "description": "A precursor to sulfuric acid and a major pollutant.",
+    "atoms": [{"element":"S","x":0,"y":0,"z":0},{"element":"O","x":0,"y":1.42,"z":0},{"element":"O","x":1.23,"y":-0.71,"z":0},{"element":"O","x":-1.23,"y":-0.71,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":2},{"source":0,"target":2,"order":2},{"source":0,"target":3,"order":2}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "nitric oxide",
+    "formula": "NO",
+    "category": "inorganic",
+    "description": "A simple free radical and important cellular signaling molecule.",
+    "atoms": [{"element":"N","x":0,"y":0,"z":0},{"element":"O","x":0,"y":0,"z":1.15}],
+    "bonds": [{"source":0,"target":1,"order":2}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "nitrogen dioxide",
+    "formula": "NO2",
+    "category": "inorganic",
+    "description": "A reddish-brown gas and prominent air pollutant.",
+    "atoms": [{"element":"N","x":0,"y":0,"z":0},{"element":"O","x":1.10,"y":-0.60,"z":0},{"element":"O","x":-1.10,"y":-0.60,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":2},{"source":0,"target":2,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "ozone",
+    "formula": "O3",
+    "category": "inorganic",
+    "description": "A triatomic allotrope of oxygen, shielding Earth from UV light.",
+    "atoms": [{"element":"O","x":0,"y":0,"z":0},{"element":"O","x":1.09,"y":-0.63,"z":0},{"element":"O","x":-1.09,"y":-0.63,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":2},{"source":0,"target":2,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "nitric acid",
+    "formula": "HNO3",
+    "category": "inorganic",
+    "description": "A highly corrosive mineral acid.",
+    "atoms": [{"element":"N","x":0,"y":0,"z":0},{"element":"O","x":0,"y":1.22,"z":0},{"element":"O","x":1.06,"y":-0.61,"z":0},{"element":"O","x":-1.06,"y":-0.61,"z":0},{"element":"H","x":-1.89,"y":-0.12,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":2},{"source":0,"target":2,"order":1},{"source":0,"target":3,"order":1},{"source":3,"target":4,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "sulfuric acid",
+    "formula": "H2SO4",
+    "category": "inorganic",
+    "description": "A strong mineral acid with major industrial importance.",
+    "atoms": [{"element":"S","x":0,"y":0,"z":0},{"element":"O","x":0,"y":1.43,"z":0},{"element":"O","x":0,"y":-1.43,"z":0},{"element":"O","x":1.20,"y":0,"z":0.78},{"element":"O","x":-1.20,"y":0,"z":-0.78},{"element":"H","x":1.70,"y":0,"z":1.55},{"element":"H","x":-1.70,"y":0,"z":-1.55}],
+    "bonds": [{"source":0,"target":1,"order":2},{"source":0,"target":2,"order":2},{"source":0,"target":3,"order":1},{"source":0,"target":4,"order":1},{"source":3,"target":5,"order":1},{"source":4,"target":6,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "phosphoric acid",
+    "formula": "H3PO4",
+    "category": "inorganic",
+    "description": "A weak acid commonly used in soft drinks and fertilizers.",
+    "atoms": [{"element":"P","x":0,"y":0,"z":0},{"element":"O","x":0,"y":1.45,"z":0},{"element":"O","x":1.20,"y":0,"z":0.80},{"element":"O","x":-1.20,"y":0,"z":-0.80},{"element":"O","x":0,"y":-1.20,"z":0.80},{"element":"H","x":1.80,"y":0,"z":1.50},{"element":"H","x":-1.80,"y":0,"z":-1.50},{"element":"H","x":0,"y":-1.90,"z":1.40}],
+    "bonds": [{"source":0,"target":1,"order":2},{"source":0,"target":2,"order":1},{"source":0,"target":3,"order":1},{"source":0,"target":4,"order":1},{"source":2,"target":5,"order":1},{"source":3,"target":6,"order":1},{"source":4,"target":7,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "sodium chloride",
+    "formula": "NaCl",
+    "category": "inorganic",
+    "description": "An ionic compound essential as table salt.",
+    "atoms": [{"element":"Na","x":0,"y":0,"z":0},{"element":"Cl","x":2.36,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "magnesium oxide",
+    "formula": "MgO",
+    "category": "inorganic",
+    "description": "A white hygroscopic solid mineral.",
+    "atoms": [{"element":"Mg","x":0,"y":0,"z":0},{"element":"O","x":1.90,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":2}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "calcium hydroxide",
+    "formula": "Ca(OH)2",
+    "category": "inorganic",
+    "description": "An inorganic compound commonly called slaked lime.",
+    "atoms": [{"element":"Ca","x":0,"y":0,"z":0},{"element":"O","x":2.0,"y":0,"z":0},{"element":"O","x":-2.0,"y":0,"z":0},{"element":"H","x":2.9,"y":0,"z":0},{"element":"H","x":-2.9,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":0,"target":2,"order":1},{"source":1,"target":3,"order":1},{"source":2,"target":4,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "carbon",
+    "formula": "C",
+    "category": "inorganic",
+    "description": "A nonmetallic chemical element with diverse allotropes like graphite and diamond.",
+    "atoms": [{"element":"C","x":0,"y":0,"z":0}],
+    "bonds": [],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "sulfur",
+    "formula": "S",
+    "category": "inorganic",
+    "description": "A multivalent nonmetal occurring naturally in yellow crystalline forms.",
+    "atoms": [{"element":"S","x":0,"y":0,"z":0}],
+    "bonds": [],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "sodium",
+    "formula": "Na",
+    "category": "inorganic",
+    "description": "A highly reactive, soft, silvery-white alkali metal.",
+    "atoms": [{"element":"Na","x":0,"y":0,"z":0}],
+    "bonds": [],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "magnesium",
+    "formula": "Mg",
+    "category": "inorganic",
+    "description": "A shiny gray alkaline earth metal.",
+    "atoms": [{"element":"Mg","x":0,"y":0,"z":0}],
+    "bonds": [],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "calcium",
+    "formula": "Ca",
+    "category": "inorganic",
+    "description": "A reactive alkaline earth metal vital for living organisms.",
+    "atoms": [{"element":"Ca","x":0,"y":0,"z":0}],
+    "bonds": [],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "iron",
+    "formula": "Fe",
+    "category": "inorganic",
+    "description": "A transition metal that is the most common element on Earth by mass.",
+    "atoms": [{"element":"Fe","x":0,"y":0,"z":0}],
+    "bonds": [],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "copper",
+    "formula": "Cu",
+    "category": "inorganic",
+    "description": "A highly conductive transition metal with a distinctive reddish-orange color.",
+    "atoms": [{"element":"Cu","x":0,"y":0,"z":0}],
+    "bonds": [],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "zinc",
+    "formula": "Zn",
+    "category": "inorganic",
+    "description": "A transition metal commonly used for galvanization.",
+    "atoms": [{"element":"Zn","x":0,"y":0,"z":0}],
+    "bonds": [],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "lead",
+    "formula": "Pb",
+    "category": "inorganic",
+    "description": "A heavy, toxic post-transition metal.",
+    "atoms": [{"element":"Pb","x":0,"y":0,"z":0}],
+    "bonds": [],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "aluminum",
+    "formula": "Al",
+    "category": "inorganic",
+    "description": "A lightweight, silvery-white post-transition metal.",
+    "atoms": [{"element":"Al","x":0,"y":0,"z":0}],
+    "bonds": [],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "silver",
+    "formula": "Ag",
+    "category": "inorganic",
+    "description": "A precious transition metal with the highest electrical conductivity.",
+    "atoms": [{"element":"Ag","x":0,"y":0,"z":0}],
+    "bonds": [],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "potassium nitrite",
+    "formula": "KNO2",
+    "category": "inorganic",
+    "description": "An inorganic potassium salt of nitrous acid used as a food additive.",
+    "atoms": [{"element":"K","x":0,"y":2.5,"z":0},{"element":"N","x":0,"y":0,"z":0},{"element":"O","x":1.1,"y":-0.6,"z":0},{"element":"O","x":-1.1,"y":-0.6,"z":0}],
+    "bonds": [{"source":1,"target":2,"order":2},{"source":1,"target":3,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "ammonium chloride",
+    "formula": "NH4Cl",
+    "category": "inorganic",
+    "description": "An inorganic white crystalline salt consisting of ammonium and chloride ions.",
+    "atoms": [{"element":"N","x":0,"y":0,"z":0},{"element":"H","x":0.81,"y":0.81,"z":0.81},{"element":"H","x":-0.81,"y":-0.81,"z":0.81},{"element":"H","x":-0.81,"y":0.81,"z":-0.81},{"element":"H","x":0.81,"y":-0.81,"z":-0.81},{"element":"Cl","x":0,"y":0,"z":3.0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":0,"target":2,"order":1},{"source":0,"target":3,"order":1},{"source":0,"target":4,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "iron(iii) oxide",
+    "formula": "Fe2O3",
+    "category": "inorganic",
+    "description": "A common inorganic iron oxide, often occurring in nature as hematite.",
+    "atoms": [{"element":"Fe","x":-1.8,"y":0,"z":0},{"element":"O","x":0,"y":0,"z":0},{"element":"Fe","x":1.8,"y":0,"z":0},{"element":"O","x":-3.2,"y":0,"z":0},{"element":"O","x":3.2,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":1,"target":2,"order":1},{"source":0,"target":3,"order":2},{"source":2,"target":4,"order":2}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "aluminum oxide",
+    "formula": "Al2O3",
+    "category": "inorganic",
+    "description": "An amphoteric aluminum oxide commonly referred to as alumina.",
+    "atoms": [{"element":"Al","x":-1.8,"y":0,"z":0},{"element":"O","x":0,"y":0,"z":0},{"element":"Al","x":1.8,"y":0,"z":0},{"element":"O","x":-3.2,"y":0,"z":0},{"element":"O","x":3.2,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":1,"target":2,"order":1},{"source":0,"target":3,"order":2},{"source":2,"target":4,"order":2}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "lithium sulfide",
+    "formula": "Li2S",
+    "category": "inorganic",
+    "description": "An inorganic compound used in lithium-sulfur batteries.",
+    "atoms": [{"element":"S","x":0,"y":0,"z":0},{"element":"Li","x":1.5,"y":0.9,"z":0},{"element":"Li","x":-1.5,"y":0.9,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":0,"target":2,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "magnesium hydroxide",
+    "formula": "Mg(OH)2",
+    "category": "inorganic",
+    "description": "An inorganic compound known as milk of magnesia.",
+    "atoms": [{"element":"Mg","x":0,"y":0,"z":0},{"element":"O","x":1.9,"y":0,"z":0},{"element":"O","x":-1.9,"y":0,"z":0},{"element":"H","x":2.8,"y":0,"z":0},{"element":"H","x":-2.8,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":0,"target":2,"order":1},{"source":1,"target":3,"order":1},{"source":2,"target":4,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "calcium carbide",
+    "formula": "CaC2",
+    "category": "inorganic",
+    "description": "An industrial chemical used in the production of acetylene.",
+    "atoms": [{"element":"Ca","x":0,"y":2.5,"z":0},{"element":"C","x":0,"y":0,"z":0.6},{"element":"C","x":0,"y":0,"z":-0.6}],
+    "bonds": [{"source":1,"target":2,"order":3}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "sodium bromide",
+    "formula": "NaBr",
+    "category": "inorganic",
+    "description": "A high-melting inorganic white, crystalline solid.",
+    "atoms": [{"element":"Na","x":0,"y":0,"z":0},{"element":"Br","x":2.9,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "potassium fluoride",
+    "formula": "KF",
+    "category": "inorganic",
+    "description": "A primary source of the fluoride ion for manufacturing and chemistry.",
+    "atoms": [{"element":"K","x":0,"y":0,"z":0},{"element":"F","x":2.6,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "halogen",
+    "formula": "F2",
+    "category": "inorganic",
+    "description": "A prototypical representation of a diatomic halogen molecule.",
+    "atoms": [{"element":"F","x":0,"y":0,"z":0},{"element":"F","x":1.4,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "hydrogen halide",
+    "formula": "HF",
+    "category": "inorganic",
+    "description": "A prototypical representation of a diatomic hydrogen halide.",
+    "atoms": [{"element":"H","x":0,"y":0,"z":0},{"element":"F","x":0.9,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "nitrogen monoxide",
+    "formula": "NO",
+    "category": "inorganic",
+    "description": "A simple diatomic free radical gas.",
+    "atoms": [{"element":"N","x":0,"y":0,"z":0},{"element":"O","x":1.15,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":2}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "iron(iii) ion",
+    "formula": "Fe3+",
+    "category": "inorganic",
+    "description": "A highly charged monatomic iron cation.",
+    "atoms": [{"element":"Fe","x":0,"y":0,"z":0}],
+    "bonds": [],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "tetrachloroferrate(iii) ion",
+    "formula": "FeCl4-",
+    "category": "inorganic",
+    "description": "A tetrahedral complex anion of iron and chlorine.",
+    "atoms": [{"element":"Fe","x":0,"y":0,"z":0},{"element":"Cl","x":0,"y":0,"z":2.2},{"element":"Cl","x":2.0,"y":0,"z":-0.7},{"element":"Cl","x":-1.0,"y":1.7,"z":-0.7},{"element":"Cl","x":-1.0,"y":-1.7,"z":-0.7}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":0,"target":2,"order":1},{"source":0,"target":3,"order":1},{"source":0,"target":4,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "ammonia boron trifluoride",
+    "formula": "NH3BF3",
+    "category": "inorganic",
+    "description": "A prototypical Lewis acid-base adduct.",
+    "atoms": [{"element":"N","x":0,"y":0,"z":-0.8},{"element":"B","x":0,"y":0,"z":0.8},{"element":"H","x":0.9,"y":0,"z":-1.2},{"element":"H","x":-0.45,"y":0.78,"z":-1.2},{"element":"H","x":-0.45,"y":-0.78,"z":-1.2},{"element":"F","x":1.2,"y":0,"z":1.2},{"element":"F","x":-0.6,"y":1.04,"z":1.2},{"element":"F","x":-0.6,"y":-1.04,"z":1.2}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":0,"target":2,"order":1},{"source":0,"target":3,"order":1},{"source":0,"target":4,"order":1},{"source":1,"target":5,"order":1},{"source":1,"target":6,"order":1},{"source":1,"target":7,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "calcium nitrate",
+    "formula": "Ca(NO3)2",
+    "category": "inorganic",
+    "description": "A colorless inorganic salt used in fertilizers.",
+    "atoms": [{"element":"Ca","x":0,"y":0,"z":0},{"element":"N","x":3.0,"y":0,"z":0},{"element":"O","x":2.0,"y":0.8,"z":0},{"element":"O","x":2.0,"y":-0.8,"z":0},{"element":"O","x":4.0,"y":0,"z":0},{"element":"N","x":-3.0,"y":0,"z":0},{"element":"O","x":-2.0,"y":0.8,"z":0},{"element":"O","x":-2.0,"y":-0.8,"z":0},{"element":"O","x":-4.0,"y":0,"z":0}],
+    "bonds": [{"source":1,"target":2,"order":1},{"source":1,"target":3,"order":2},{"source":1,"target":4,"order":1},{"source":5,"target":6,"order":1},{"source":5,"target":7,"order":2},{"source":5,"target":8,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "aluminum chloride",
+    "formula": "AlCl3",
+    "category": "inorganic",
+    "description": "A trigonal planar inorganic compound.",
+    "atoms": [{"element":"Al","x":0,"y":0,"z":0},{"element":"Cl","x":0,"y":2.1,"z":0},{"element":"Cl","x":1.8,"y":-1.05,"z":0},{"element":"Cl","x":-1.8,"y":-1.05,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":0,"target":2,"order":1},{"source":0,"target":3,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "alpha particle",
+    "formula": "He2+",
+    "category": "inorganic",
+    "description": "A helium nucleus comprising two protons and two neutrons.",
+    "atoms": [{"element":"He","x":0,"y":0,"z":0}],
+    "bonds": [],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "neutron",
+    "formula": "n",
+    "category": "inorganic",
+    "description": "A subatomic particle with no net electric charge.",
+    "atoms": [{"element":"n","x":0,"y":0,"z":0}],
+    "bonds": [],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "phosphorus pentachloride",
+    "formula": "PCl5",
+    "category": "inorganic",
+    "description": "A trigonal bipyramidal phosphorus halide.",
+    "atoms": [{"element":"P","x":0,"y":0,"z":0},{"element":"Cl","x":0,"y":0,"z":2.1},{"element":"Cl","x":0,"y":0,"z":-2.1},{"element":"Cl","x":2.0,"y":0,"z":0},{"element":"Cl","x":-1.0,"y":1.73,"z":0},{"element":"Cl","x":-1.0,"y":-1.73,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":0,"target":2,"order":1},{"source":0,"target":3,"order":1},{"source":0,"target":4,"order":1},{"source":0,"target":5,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "silver nitrate",
+    "formula": "AgNO3",
+    "category": "inorganic",
+    "description": "An inorganic compound widely used as a precursor to other silver compounds.",
+    "atoms": [{"element":"Ag","x":0,"y":2.5,"z":0},{"element":"N","x":0,"y":0,"z":0},{"element":"O","x":0,"y":1.2,"z":0},{"element":"O","x":1.0,"y":-0.6,"z":0},{"element":"O","x":-1.0,"y":-0.6,"z":0}],
+    "bonds": [{"source":1,"target":2,"order":1},{"source":1,"target":3,"order":2},{"source":1,"target":4,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "adduct",
+    "formula": "NH3BF3",
+    "category": "inorganic",
+    "description": "A prototypical adduct molecule formed by combining a Lewis acid and base.",
+    "atoms": [{"element":"N","x":0,"y":0,"z":-0.8},{"element":"B","x":0,"y":0,"z":0.8},{"element":"H","x":0.9,"y":0,"z":-1.2},{"element":"H","x":-0.45,"y":0.78,"z":-1.2},{"element":"H","x":-0.45,"y":-0.78,"z":-1.2},{"element":"F","x":1.2,"y":0,"z":1.2},{"element":"F","x":-0.6,"y":1.04,"z":1.2},{"element":"F","x":-0.6,"y":-1.04,"z":1.2}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":0,"target":2,"order":1},{"source":0,"target":3,"order":1},{"source":0,"target":4,"order":1},{"source":1,"target":5,"order":1},{"source":1,"target":6,"order":1},{"source":1,"target":7,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "tungsten oxide",
+    "formula": "WO3",
+    "category": "inorganic",
+    "description": "A transition metal oxide used in smart windows and catalysts.",
+    "atoms": [{"element":"W","x":0,"y":0,"z":0},{"element":"O","x":0,"y":1.7,"z":0},{"element":"O","x":1.47,"y":-0.85,"z":0},{"element":"O","x":-1.47,"y":-0.85,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":2},{"source":0,"target":2,"order":2},{"source":0,"target":3,"order":2}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "iron oxide",
+    "formula": "Fe2O3",
+    "category": "inorganic",
+    "description": "A generic representation of iron oxide.",
+    "atoms": [{"element":"Fe","x":-1.8,"y":0,"z":0},{"element":"O","x":0,"y":0,"z":0},{"element":"Fe","x":1.8,"y":0,"z":0},{"element":"O","x":-3.2,"y":0,"z":0},{"element":"O","x":3.2,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":1,"target":2,"order":1},{"source":0,"target":3,"order":2},{"source":2,"target":4,"order":2}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "lithium oxide",
+    "formula": "Li2O",
+    "category": "inorganic",
+    "description": "A lightweight inorganic alkali metal oxide.",
+    "atoms": [{"element":"O","x":0,"y":0,"z":0},{"element":"Li","x":1.5,"y":0.8,"z":0},{"element":"Li","x":-1.5,"y":0.8,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":0,"target":2,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "potassium superoxide",
+    "formula": "KO2",
+    "category": "inorganic",
+    "description": "An inorganic compound that reacts with moisture to generate oxygen.",
+    "atoms": [{"element":"K","x":0,"y":2.5,"z":0},{"element":"O","x":0.6,"y":0,"z":0},{"element":"O","x":-0.6,"y":0,"z":0}],
+    "bonds": [{"source":1,"target":2,"order":1.5}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "rubidium",
+    "formula": "Rb",
+    "category": "inorganic",
+    "description": "A highly reactive, soft alkali metal.",
+    "atoms": [{"element":"Rb","x":0,"y":0,"z":0}],
+    "bonds": [],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "cesium superoxide",
+    "formula": "CsO2",
+    "category": "inorganic",
+    "description": "An oxygen-rich alkali metal compound.",
+    "atoms": [{"element":"Cs","x":0,"y":3.0,"z":0},{"element":"O","x":0.6,"y":0,"z":0},{"element":"O","x":-0.6,"y":0,"z":0}],
+    "bonds": [{"source":1,"target":2,"order":1.5}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "metal",
+    "formula": "Fe",
+    "category": "inorganic",
+    "description": "A generic representation of a bulk metal atom.",
+    "atoms": [{"element":"Fe","x":0,"y":0,"z":0}],
+    "bonds": [],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "metal oxide",
+    "formula": "MgO",
+    "category": "inorganic",
+    "description": "A generic representation of a metal oxide.",
+    "atoms": [{"element":"Mg","x":0,"y":0,"z":0},{"element":"O","x":1.9,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":2}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "metal peroxide",
+    "formula": "Na2O2",
+    "category": "inorganic",
+    "description": "A generic representation of a metal peroxide.",
+    "atoms": [{"element":"O","x":0.7,"y":0,"z":0},{"element":"O","x":-0.7,"y":0,"z":0},{"element":"Na","x":2.5,"y":1.0,"z":0},{"element":"Na","x":-2.5,"y":-1.0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":0,"target":2,"order":1},{"source":1,"target":3,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "alkali metal",
+    "formula": "Na",
+    "category": "inorganic",
+    "description": "A generic representation of an alkali metal atom.",
+    "atoms": [{"element":"Na","x":0,"y":0,"z":0}],
+    "bonds": [],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "alkali metal hydroxide",
+    "formula": "NaOH",
+    "category": "inorganic",
+    "description": "A generic representation of an alkali metal hydroxide.",
+    "atoms": [{"element":"Na","x":0,"y":2.0,"z":0},{"element":"O","x":0,"y":0,"z":0},{"element":"H","x":0.9,"y":0,"z":0}],
+    "bonds": [{"source":1,"target":2,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "alkaline earth metal",
+    "formula": "Ca",
+    "category": "inorganic",
+    "description": "A generic representation of an alkaline earth metal atom.",
+    "atoms": [{"element":"Ca","x":0,"y":0,"z":0}],
+    "bonds": [],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "alkaline earth metal hydroxide",
+    "formula": "Ca(OH)2",
+    "category": "inorganic",
+    "description": "A generic representation of an alkaline earth metal hydroxide.",
+    "atoms": [{"element":"Ca","x":0,"y":0,"z":0},{"element":"O","x":2.0,"y":0,"z":0},{"element":"O","x":-2.0,"y":0,"z":0},{"element":"H","x":2.9,"y":0,"z":0},{"element":"H","x":-2.9,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":0,"target":2,"order":1},{"source":1,"target":3,"order":1},{"source":2,"target":4,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "alkali metal halide",
+    "formula": "NaCl",
+    "category": "inorganic",
+    "description": "A generic representation of an alkali metal halide.",
+    "atoms": [{"element":"Na","x":0,"y":0,"z":0},{"element":"Cl","x":2.4,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "alkaline earth metal halide",
+    "formula": "CaCl2",
+    "category": "inorganic",
+    "description": "A generic representation of an alkaline earth metal halide.",
+    "atoms": [{"element":"Ca","x":0,"y":0,"z":0},{"element":"Cl","x":2.6,"y":0,"z":0},{"element":"Cl","x":-2.6,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":0,"target":2,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "metal nitride",
+    "formula": "AlN",
+    "category": "inorganic",
+    "description": "A generic representation of a metal nitride.",
+    "atoms": [{"element":"Al","x":0,"y":0,"z":0},{"element":"N","x":1.9,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":3}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "metal hydride",
+    "formula": "LiH",
+    "category": "inorganic",
+    "description": "A generic representation of a metal hydride.",
+    "atoms": [{"element":"Li","x":0,"y":0,"z":0},{"element":"H","x":1.6,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "metal ethoxide",
+    "formula": "NaOC2H5",
+    "category": "organic",
+    "description": "A generic representation of a metal ethoxide using sodium ethoxide.",
+    "atoms": [{"element":"Na","x":0,"y":2.0,"z":0},{"element":"O","x":0,"y":0,"z":0},{"element":"C","x":1.2,"y":-0.5,"z":0},{"element":"C","x":2.4,"y":0.5,"z":0}],
+    "bonds": [{"source":1,"target":2,"order":1},{"source":2,"target":3,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "metal chloride",
+    "formula": "NaCl",
+    "category": "inorganic",
+    "description": "A generic representation of a metal chloride.",
+    "atoms": [{"element":"Na","x":0,"y":0,"z":0},{"element":"Cl","x":2.4,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "sodium sulphate",
+    "formula": "Na2SO4",
+    "category": "inorganic",
+    "description": "A common soluble sodium salt of sulfuric acid.",
+    "atoms": [{"element":"S","x":0,"y":0,"z":0},{"element":"O","x":1.2,"y":1.2,"z":0},{"element":"O","x":-1.2,"y":-1.2,"z":0},{"element":"O","x":-1.2,"y":1.2,"z":0},{"element":"O","x":1.2,"y":-1.2,"z":0},{"element":"Na","x":3.0,"y":3.0,"z":0},{"element":"Na","x":-3.0,"y":-3.0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":2},{"source":0,"target":2,"order":2},{"source":0,"target":3,"order":1},{"source":0,"target":4,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "ferric chloride",
+    "formula": "FeCl3",
+    "category": "inorganic",
+    "description": "An industrial scale inorganic iron halide.",
+    "atoms": [{"element":"Fe","x":0,"y":0,"z":0},{"element":"Cl","x":0,"y":2.1,"z":0},{"element":"Cl","x":1.8,"y":-1.05,"z":0},{"element":"Cl","x":-1.8,"y":-1.05,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":0,"target":2,"order":1},{"source":0,"target":3,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "ferric hydroxide",
+    "formula": "Fe(OH)3",
+    "category": "inorganic",
+    "description": "An inorganic compound often forming hydrated iron oxides.",
+    "atoms": [{"element":"Fe","x":0,"y":0,"z":0},{"element":"O","x":0,"y":1.9,"z":0},{"element":"O","x":1.6,"y":-0.95,"z":0},{"element":"O","x":-1.6,"y":-0.95,"z":0},{"element":"H","x":0,"y":2.8,"z":0},{"element":"H","x":2.4,"y":-1.4,"z":0},{"element":"H","x":-2.4,"y":-1.4,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":0,"target":2,"order":1},{"source":0,"target":3,"order":1},{"source":1,"target":4,"order":1},{"source":2,"target":5,"order":1},{"source":3,"target":6,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "sodium zincate",
+    "formula": "Na2ZnO2",
+    "category": "inorganic",
+    "description": "An anionic zinc complex paired with sodium.",
+    "atoms": [{"element":"Zn","x":0,"y":0,"z":0},{"element":"O","x":1.8,"y":0,"z":0},{"element":"O","x":-1.8,"y":0,"z":0},{"element":"Na","x":0,"y":3.0,"z":0},{"element":"Na","x":0,"y":-3.0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":2},{"source":0,"target":2,"order":2}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "sodium chlorate",
+    "formula": "NaClO3",
+    "category": "inorganic",
+    "description": "An inorganic salt containing the chlorate anion.",
+    "atoms": [{"element":"Cl","x":0,"y":0,"z":0},{"element":"O","x":0,"y":1.4,"z":0},{"element":"O","x":1.2,"y":-0.7,"z":0},{"element":"O","x":-1.2,"y":-0.7,"z":0},{"element":"Na","x":0,"y":0,"z":3.0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":0,"target":2,"order":2},{"source":0,"target":3,"order":2}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "bleaching powder",
+    "formula": "Ca(ClO)2",
+    "category": "inorganic",
+    "description": "A mixture used heavily for water treatment and bleaching.",
+    "atoms": [{"element":"Ca","x":0,"y":0,"z":0},{"element":"O","x":2.2,"y":0.8,"z":0},{"element":"Cl","x":3.4,"y":-0.2,"z":0},{"element":"O","x":-2.2,"y":-0.8,"z":0},{"element":"Cl","x":-3.4,"y":0.2,"z":0}],
+    "bonds": [{"source":1,"target":2,"order":1},{"source":3,"target":4,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "hypochlorous acid",
+    "formula": "HClO",
+    "category": "inorganic",
+    "description": "A weak acid that acts as a strong oxidizer and bleach.",
+    "atoms": [{"element":"H","x":0,"y":0,"z":0},{"element":"O","x":0.96,"y":0,"z":0},{"element":"Cl","x":1.6,"y":1.4,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":1,"target":2,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "boron",
+    "formula": "B",
+    "category": "inorganic",
+    "description": "A metalloid element used in advanced materials and doping.",
+    "atoms": [{"element":"B","x":0,"y":0,"z":0}],
+    "bonds": [],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "silicon dioxide",
+    "formula": "SiO2",
+    "category": "inorganic",
+    "description": "A major constituent of sand and glass, shown here as a monomer.",
+    "atoms": [{"element":"Si","x":0,"y":0,"z":0},{"element":"O","x":1.5,"y":0,"z":0},{"element":"O","x":-1.5,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":2},{"source":0,"target":2,"order":2}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "phosphorus trioxide",
+    "formula": "P2O3",
+    "category": "inorganic",
+    "description": "A simplified minimal representation of a phosphorus oxide.",
+    "atoms": [{"element":"O","x":0,"y":0,"z":0},{"element":"P","x":1.5,"y":0,"z":0},{"element":"O","x":2.7,"y":0.8,"z":0},{"element":"P","x":-1.5,"y":0,"z":0},{"element":"O","x":-2.7,"y":0.8,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":1,"target":2,"order":2},{"source":0,"target":3,"order":1},{"source":3,"target":4,"order":2}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "aluminum hydroxide",
+    "formula": "Al(OH)3",
+    "category": "inorganic",
+    "description": "An amphoteric hydroxide of aluminum.",
+    "atoms": [{"element":"Al","x":0,"y":0,"z":0},{"element":"O","x":0,"y":1.9,"z":0},{"element":"O","x":1.6,"y":-0.95,"z":0},{"element":"O","x":-1.6,"y":-0.95,"z":0},{"element":"H","x":0,"y":2.8,"z":0},{"element":"H","x":2.4,"y":-1.4,"z":0},{"element":"H","x":-2.4,"y":-1.4,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":0,"target":2,"order":1},{"source":0,"target":3,"order":1},{"source":1,"target":4,"order":1},{"source":2,"target":5,"order":1},{"source":3,"target":6,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "phosphine",
+    "formula": "PH3",
+    "category": "inorganic",
+    "description": "A toxic, flammable gas with a garlic-like odor.",
+    "atoms": [{"element":"P","x":0,"y":0,"z":0},{"element":"H","x":1.2,"y":0,"z":-0.5},{"element":"H","x":-0.6,"y":1.04,"z":-0.5},{"element":"H","x":-0.6,"y":-1.04,"z":-0.5}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":0,"target":2,"order":1},{"source":0,"target":3,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "nitrogen trichloride",
+    "formula": "NCl3",
+    "category": "inorganic",
+    "description": "A highly explosive, yellow, oily liquid.",
+    "atoms": [{"element":"N","x":0,"y":0,"z":0},{"element":"Cl","x":1.5,"y":0,"z":-0.7},{"element":"Cl","x":-0.75,"y":1.3,"z":-0.7},{"element":"Cl","x":-0.75,"y":-1.3,"z":-0.7}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":0,"target":2,"order":1},{"source":0,"target":3,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "boron nitride",
+    "formula": "BN",
+    "category": "inorganic",
+    "description": "A thermally and chemically resistant refractory compound.",
+    "atoms": [{"element":"B","x":0,"y":0,"z":0},{"element":"N","x":1.45,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":3}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "silicon nitride",
+    "formula": "Si3N4",
+    "category": "inorganic",
+    "description": "A simplified linear representation of silicon nitride.",
+    "atoms": [{"element":"N","x":0,"y":0,"z":0},{"element":"Si","x":1.7,"y":0,"z":0},{"element":"Si","x":-1.7,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":2},{"source":0,"target":2,"order":2}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "phosphorus nitride",
+    "formula": "PN",
+    "category": "inorganic",
+    "description": "An inorganic compound consisting of phosphorus and nitrogen.",
+    "atoms": [{"element":"P","x":0,"y":0,"z":0},{"element":"N","x":1.5,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":3}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "silane",
+    "formula": "SiH4",
+    "category": "inorganic",
+    "description": "A pyrophoric silicon analogue of methane.",
+    "atoms": [{"element":"Si","x":0,"y":0,"z":0},{"element":"H","x":1.48,"y":0,"z":0},{"element":"H","x":-0.49,"y":1.39,"z":0},{"element":"H","x":-0.49,"y":-0.7,"z":1.21},{"element":"H","x":-0.49,"y":-0.7,"z":-1.21}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":0,"target":2,"order":1},{"source":0,"target":3,"order":1},{"source":0,"target":4,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "sodium iodide",
+    "formula": "NaI",
+    "category": "inorganic",
+    "description": "A white, water-soluble salt used to treat iodine deficiency.",
+    "atoms": [{"element":"Na","x":0,"y":0,"z":0},{"element":"I","x":3.2,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "aluminum sulphate",
+    "formula": "Al2(SO4)3",
+    "category": "inorganic",
+    "description": "Represented by a minimal complex structural unit proxy.",
+    "atoms": [{"element":"Al","x":0,"y":0,"z":0},{"element":"O","x":1.8,"y":0,"z":0},{"element":"S","x":3.2,"y":0,"z":0},{"element":"O","x":3.9,"y":1.2,"z":0},{"element":"O","x":3.9,"y":-1.2,"z":0},{"element":"O","x":3.9,"y":0,"z":1.2}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":1,"target":2,"order":1},{"source":2,"target":3,"order":2},{"source":2,"target":4,"order":2},{"source":2,"target":5,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "sucrose",
+    "formula": "C12H22O11",
+    "category": "organic",
+    "description": "Represented by a hexose monomer as a generic carbohydrate skeleton prototype.",
+    "atoms": [{"element":"O","x":0,"y":1.4,"z":0},{"element":"C","x":1.2,"y":0.7,"z":-0.5},{"element":"C","x":1.2,"y":-0.7,"z":0.5},{"element":"C","x":0,"y":-1.4,"z":-0.5},{"element":"C","x":-1.2,"y":-0.7,"z":0.5},{"element":"C","x":-1.2,"y":0.7,"z":-0.5}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":1,"target":2,"order":1},{"source":2,"target":3,"order":1},{"source":3,"target":4,"order":1},{"source":4,"target":5,"order":1},{"source":5,"target":0,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "benzene sulphonic acid",
+    "formula": "C6H5SO3H",
+    "category": "organic",
+    "description": "An organosulfur compound representing the simplest aromatic sulfonic acid.",
+    "atoms": [{"element":"C","x":1.4,"y":0,"z":0},{"element":"C","x":0.7,"y":1.2,"z":0},{"element":"C","x":-0.7,"y":1.2,"z":0},{"element":"C","x":-1.4,"y":0,"z":0},{"element":"C","x":-0.7,"y":-1.2,"z":0},{"element":"C","x":0.7,"y":-1.2,"z":0},{"element":"S","x":3.1,"y":0,"z":0},{"element":"O","x":3.6,"y":1.2,"z":0},{"element":"O","x":3.6,"y":-1.2,"z":0},{"element":"O","x":3.6,"y":0,"z":1.2}],
+    "bonds": [{"source":0,"target":1,"order":2},{"source":1,"target":2,"order":1},{"source":2,"target":3,"order":2},{"source":3,"target":4,"order":1},{"source":4,"target":5,"order":2},{"source":5,"target":0,"order":1},{"source":0,"target":6,"order":1},{"source":6,"target":7,"order":2},{"source":6,"target":8,"order":2},{"source":6,"target":9,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "p-toluene sulphonic acid",
+    "formula": "CH3C6H4SO3H",
+    "category": "organic",
+    "description": "A strong organic acid containing both methyl and sulfonic acid groups on a benzene ring.",
+    "atoms": [{"element":"C","x":1.4,"y":0,"z":0},{"element":"C","x":0.7,"y":1.2,"z":0},{"element":"C","x":-0.7,"y":1.2,"z":0},{"element":"C","x":-1.4,"y":0,"z":0},{"element":"C","x":-0.7,"y":-1.2,"z":0},{"element":"C","x":0.7,"y":-1.2,"z":0},{"element":"S","x":3.1,"y":0,"z":0},{"element":"O","x":3.6,"y":1.2,"z":0},{"element":"O","x":3.6,"y":-1.2,"z":0},{"element":"O","x":3.6,"y":0,"z":1.2},{"element":"C","x":-2.9,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":2},{"source":1,"target":2,"order":1},{"source":2,"target":3,"order":2},{"source":3,"target":4,"order":1},{"source":4,"target":5,"order":2},{"source":5,"target":0,"order":1},{"source":0,"target":6,"order":1},{"source":6,"target":7,"order":2},{"source":6,"target":8,"order":2},{"source":6,"target":9,"order":1},{"source":3,"target":10,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "chromium",
+    "formula": "Cr",
+    "category": "inorganic",
+    "description": "A steely-gray, lustrous, hard transition metal.",
+    "atoms": [{"element":"Cr","x":0,"y":0,"z":0}],
+    "bonds": [],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "chromium chloride",
+    "formula": "CrCl3",
+    "category": "inorganic",
+    "description": "An inorganic chromium salt displaying a trigonal planar geometry.",
+    "atoms": [{"element":"Cr","x":0,"y":0,"z":0},{"element":"Cl","x":0,"y":2.2,"z":0},{"element":"Cl","x":1.9,"y":-1.1,"z":0},{"element":"Cl","x":-1.9,"y":-1.1,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":0,"target":2,"order":1},{"source":0,"target":3,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "chromium oxide",
+    "formula": "Cr2O3",
+    "category": "inorganic",
+    "description": "A generic representation of chromium oxide as a small molecular cluster.",
+    "atoms": [{"element":"Cr","x":-1.8,"y":0,"z":0},{"element":"O","x":0,"y":0,"z":0},{"element":"Cr","x":1.8,"y":0,"z":0},{"element":"O","x":-3.2,"y":0,"z":0},{"element":"O","x":3.2,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":1,"target":2,"order":1},{"source":0,"target":3,"order":2},{"source":2,"target":4,"order":2}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "ferric ion",
+    "formula": "Fe3+",
+    "category": "inorganic",
+    "description": "A highly charged monatomic iron cation.",
+    "atoms": [{"element":"Fe","x":0,"y":0,"z":0}],
+    "bonds": [],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "manganese",
+    "formula": "Mn",
+    "category": "inorganic",
+    "description": "A transition metal with multifaceted oxidation states.",
+    "atoms": [{"element":"Mn","x":0,"y":0,"z":0}],
+    "bonds": [],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "manganese chloride",
+    "formula": "MnCl2",
+    "category": "inorganic",
+    "description": "A simple transition metal halide.",
+    "atoms": [{"element":"Mn","x":0,"y":0,"z":0},{"element":"Cl","x":2.3,"y":0,"z":0},{"element":"Cl","x":-2.3,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":0,"target":2,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "electron",
+    "formula": "e-",
+    "category": "inorganic",
+    "description": "A subatomic particle with a negative elementary electric charge.",
+    "atoms": [{"element":"e","x":0,"y":0,"z":0}],
+    "bonds": [],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "manganese dioxide",
+    "formula": "MnO2",
+    "category": "inorganic",
+    "description": "A blackish or brown solid transition metal oxide.",
+    "atoms": [{"element":"Mn","x":0,"y":0,"z":0},{"element":"O","x":1.6,"y":0,"z":0},{"element":"O","x":-1.6,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":2},{"source":0,"target":2,"order":2}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "oxalate ion",
+    "formula": "C2O4 2-",
+    "category": "inorganic",
+    "description": "A dicarboxylic acid dianion.",
+    "atoms": [{"element":"C","x":0.7,"y":0,"z":0},{"element":"C","x":-0.7,"y":0,"z":0},{"element":"O","x":1.5,"y":1.0,"z":0},{"element":"O","x":1.5,"y":-1.0,"z":0},{"element":"O","x":-1.5,"y":1.0,"z":0},{"element":"O","x":-1.5,"y":-1.0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":0,"target":2,"order":2},{"source":0,"target":3,"order":1},{"source":1,"target":4,"order":2},{"source":1,"target":5,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "ferric oxide",
+    "formula": "Fe2O3",
+    "category": "inorganic",
+    "description": "A representation of ferric oxide as a small molecular cluster.",
+    "atoms": [{"element":"Fe","x":-1.8,"y":0,"z":0},{"element":"O","x":0,"y":0,"z":0},{"element":"Fe","x":1.8,"y":0,"z":0},{"element":"O","x":-3.2,"y":0,"z":0},{"element":"O","x":3.2,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":1,"target":2,"order":1},{"source":0,"target":3,"order":2},{"source":2,"target":4,"order":2}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "copper nitrate",
+    "formula": "Cu(NO3)2",
+    "category": "inorganic",
+    "description": "A bright blue, highly soluble inorganic copper salt.",
+    "atoms": [{"element":"Cu","x":0,"y":0,"z":0},{"element":"O","x":1.8,"y":0.8,"z":0},{"element":"N","x":2.8,"y":0,"z":0},{"element":"O","x":3.8,"y":0.8,"z":0},{"element":"O","x":2.8,"y":-1.2,"z":0},{"element":"O","x":-1.8,"y":-0.8,"z":0},{"element":"N","x":-2.8,"y":0,"z":0},{"element":"O","x":-3.8,"y":-0.8,"z":0},{"element":"O","x":-2.8,"y":1.2,"z":0}],
+    "bonds": [{"source":1,"target":2,"order":1},{"source":2,"target":3,"order":2},{"source":2,"target":4,"order":1},{"source":5,"target":6,"order":1},{"source":6,"target":7,"order":2},{"source":6,"target":8,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "chalcopyrite",
+    "formula": "CuFeS2",
+    "category": "inorganic",
+    "description": "A copper iron sulfide mineral represented minimally.",
+    "atoms": [{"element":"S","x":0,"y":0,"z":0},{"element":"Cu","x":1.8,"y":1.0,"z":0},{"element":"Fe","x":-1.8,"y":-1.0,"z":0},{"element":"S","x":-3.6,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":0,"target":2,"order":1},{"source":2,"target":3,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "cuprous sulphide",
+    "formula": "Cu2S",
+    "category": "inorganic",
+    "description": "A copper sulfide mineral with a bent geometry.",
+    "atoms": [{"element":"S","x":0,"y":0,"z":0},{"element":"Cu","x":1.8,"y":1.0,"z":0},{"element":"Cu","x":-1.8,"y":1.0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":0,"target":2,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "silica",
+    "formula": "SiO2",
+    "category": "inorganic",
+    "description": "A major constituent of sand and glass, shown here as a monomer.",
+    "atoms": [{"element":"Si","x":0,"y":0,"z":0},{"element":"O","x":1.5,"y":0,"z":0},{"element":"O","x":-1.5,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":2},{"source":0,"target":2,"order":2}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "ferrous silicate",
+    "formula": "FeSiO3",
+    "category": "inorganic",
+    "description": "A silicate mineral of iron.",
+    "atoms": [{"element":"Fe","x":0,"y":3.0,"z":0},{"element":"Si","x":0,"y":0,"z":0},{"element":"O","x":0,"y":1.5,"z":0},{"element":"O","x":1.3,"y":-0.7,"z":0},{"element":"O","x":-1.3,"y":-0.7,"z":0}],
+    "bonds": [{"source":1,"target":2,"order":1},{"source":1,"target":3,"order":2},{"source":1,"target":4,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "cuprous oxide",
+    "formula": "Cu2O",
+    "category": "inorganic",
+    "description": "A reddish-brown copper oxide.",
+    "atoms": [{"element":"O","x":0,"y":0,"z":0},{"element":"Cu","x":1.8,"y":1.0,"z":0},{"element":"Cu","x":-1.8,"y":1.0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":0,"target":2,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "isooctane",
+    "formula": "C8H18",
+    "category": "organic",
+    "description": "A highly branched alkane serving as a standard for octane rating.",
+    "atoms": [{"element":"C","x":0,"y":0,"z":0},{"element":"C","x":1.4,"y":0.8,"z":0},{"element":"C","x":2.8,"y":0,"z":0},{"element":"C","x":4.2,"y":0.8,"z":0},{"element":"C","x":5.6,"y":0,"z":0},{"element":"C","x":1.4,"y":2.2,"z":0},{"element":"C","x":1.4,"y":0.8,"z":1.4},{"element":"C","x":4.2,"y":2.2,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":1,"target":2,"order":1},{"source":2,"target":3,"order":1},{"source":3,"target":4,"order":1},{"source":1,"target":5,"order":1},{"source":1,"target":6,"order":1},{"source":3,"target":7,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "methylene dichloride",
+    "formula": "CH2Cl2",
+    "category": "organic",
+    "description": "A volatile, widely used organic solvent.",
+    "atoms": [{"element":"C","x":0,"y":0,"z":0},{"element":"Cl","x":1.5,"y":0.9,"z":0},{"element":"Cl","x":-1.5,"y":0.9,"z":0},{"element":"H","x":0,"y":-0.8,"z":0.8},{"element":"H","x":0,"y":-0.8,"z":-0.8}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":0,"target":2,"order":1},{"source":0,"target":3,"order":1},{"source":0,"target":4,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "ethyl bromide",
+    "formula": "C2H5Br",
+    "category": "organic",
+    "description": "A highly volatile, colorless organobromine compound.",
+    "atoms": [{"element":"C","x":-0.8,"y":0,"z":0},{"element":"C","x":0.7,"y":0,"z":0},{"element":"Br","x":2.1,"y":0,"z":0},{"element":"H","x":-1.1,"y":0.9,"z":0.5},{"element":"H","x":-1.1,"y":-0.9,"z":0.5},{"element":"H","x":-1.3,"y":0,"z":-0.8},{"element":"H","x":0.9,"y":0.8,"z":0.5},{"element":"H","x":0.9,"y":-0.8,"z":0.5}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":1,"target":2,"order":1},{"source":0,"target":3,"order":1},{"source":0,"target":4,"order":1},{"source":0,"target":5,"order":1},{"source":1,"target":6,"order":1},{"source":1,"target":7,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "1,2-dibromoethane",
+    "formula": "C2H4Br2",
+    "category": "organic",
+    "description": "An organobromine compound previously used as a gasoline additive.",
+    "atoms": [{"element":"Br","x":-2.6,"y":1.0,"z":0},{"element":"C","x":-1.0,"y":0,"z":0},{"element":"C","x":0.5,"y":0,"z":0},{"element":"Br","x":2.1,"y":-1.0,"z":0},{"element":"H","x":-1.2,"y":-0.8,"z":0.6},{"element":"H","x":-1.2,"y":-0.2,"z":-0.8},{"element":"H","x":0.7,"y":0.8,"z":-0.6},{"element":"H","x":0.7,"y":0.2,"z":0.8}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":1,"target":2,"order":1},{"source":2,"target":3,"order":1},{"source":1,"target":4,"order":1},{"source":1,"target":5,"order":1},{"source":2,"target":6,"order":1},{"source":2,"target":7,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "2-bromopropane",
+    "formula": "C3H7Br",
+    "category": "organic",
+    "description": "A branched secondary alkyl bromide.",
+    "atoms": [{"element":"C","x":-1.4,"y":-0.8,"z":0},{"element":"C","x":0,"y":0,"z":0},{"element":"C","x":1.4,"y":-0.8,"z":0},{"element":"Br","x":0,"y":1.8,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":1,"target":2,"order":1},{"source":1,"target":3,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "epoxide",
+    "formula": "C2H4O",
+    "category": "organic",
+    "description": "The simplest epoxide ring, known as oxirane or ethylene oxide.",
+    "atoms": [{"element":"O","x":0,"y":1.0,"z":0},{"element":"C","x":0.7,"y":-0.2,"z":0},{"element":"C","x":-0.7,"y":-0.2,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":1,"target":2,"order":1},{"source":2,"target":0,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "zinc oxide",
+    "formula": "ZnO",
+    "category": "inorganic",
+    "description": "An inorganic white powder used in cosmetics and sunscreens.",
+    "atoms": [{"element":"Zn","x":0,"y":0,"z":0},{"element":"O","x":1.9,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":2}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "polyethene",
+    "formula": "(C2H4)n",
+    "category": "organic",
+    "description": "Represented by a short butane chain as a polymer segment proxy.",
+    "atoms": [{"element":"C","x":0,"y":0,"z":0},{"element":"C","x":1.4,"y":0.8,"z":0},{"element":"C","x":2.8,"y":0,"z":0},{"element":"C","x":4.2,"y":0.8,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":1,"target":2,"order":1},{"source":2,"target":3,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "tetrabromoethane",
+    "formula": "C2H2Br4",
+    "category": "organic",
+    "description": "A heavily halogenated ethane derivative.",
+    "atoms": [{"element":"C","x":-0.7,"y":0,"z":0},{"element":"C","x":0.7,"y":0,"z":0},{"element":"Br","x":-1.8,"y":1.4,"z":0},{"element":"Br","x":-1.8,"y":-1.4,"z":0},{"element":"Br","x":1.8,"y":1.4,"z":0},{"element":"Br","x":1.8,"y":-1.4,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":0,"target":2,"order":1},{"source":0,"target":3,"order":1},{"source":1,"target":4,"order":1},{"source":1,"target":5,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "zinc bromide",
+    "formula": "ZnBr2",
+    "category": "inorganic",
+    "description": "A highly soluble, dense Lewis acid.",
+    "atoms": [{"element":"Zn","x":0,"y":0,"z":0},{"element":"Br","x":2.4,"y":0,"z":0},{"element":"Br","x":-2.4,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":0,"target":2,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "copper acetylide",
+    "formula": "Cu2C2",
+    "category": "inorganic",
+    "description": "An explosive solid complex of copper and acetylene.",
+    "atoms": [{"element":"Cu","x":-2.4,"y":0,"z":0},{"element":"C","x":-0.6,"y":0,"z":0},{"element":"C","x":0.6,"y":0,"z":0},{"element":"Cu","x":2.4,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":1,"target":2,"order":3},{"source":2,"target":3,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "hydrogen peroxide",
+    "formula": "H2O2",
+    "category": "inorganic",
+    "description": "A reactive oxygen species with a non-planar bent geometry.",
+    "atoms": [{"element":"H","x":1.3,"y":1.1,"z":0.5},{"element":"O","x":0.7,"y":0.4,"z":0},{"element":"O","x":-0.7,"y":-0.4,"z":0},{"element":"H","x":-1.3,"y":-1.1,"z":0.5}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":1,"target":2,"order":1},{"source":2,"target":3,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "hexachlorocyclohexane",
+    "formula": "C6H6Cl6",
+    "category": "organic",
+    "description": "A fully chlorinated cyclohexane skeleton.",
+    "atoms": [{"element":"C","x":1.4,"y":0,"z":0},{"element":"C","x":0.7,"y":1.2,"z":0},{"element":"C","x":-0.7,"y":1.2,"z":0},{"element":"C","x":-1.4,"y":0,"z":0},{"element":"C","x":-0.7,"y":-1.2,"z":0},{"element":"C","x":0.7,"y":-1.2,"z":0},{"element":"Cl","x":2.8,"y":0,"z":0},{"element":"Cl","x":1.4,"y":2.4,"z":0},{"element":"Cl","x":-1.4,"y":2.4,"z":0},{"element":"Cl","x":-2.8,"y":0,"z":0},{"element":"Cl","x":-1.4,"y":-2.4,"z":0},{"element":"Cl","x":1.4,"y":-2.4,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":1,"target":2,"order":1},{"source":2,"target":3,"order":1},{"source":3,"target":4,"order":1},{"source":4,"target":5,"order":1},{"source":5,"target":0,"order":1},{"source":0,"target":6,"order":1},{"source":1,"target":7,"order":1},{"source":2,"target":8,"order":1},{"source":3,"target":9,"order":1},{"source":4,"target":10,"order":1},{"source":5,"target":11,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "nitrobenzene",
+    "formula": "C6H5NO2",
+    "category": "organic",
+    "description": "A pale yellow, almond-smelling aromatic compound.",
+    "atoms": [{"element":"C","x":1.4,"y":0,"z":0},{"element":"C","x":0.7,"y":1.2,"z":0},{"element":"C","x":-0.7,"y":1.2,"z":0},{"element":"C","x":-1.4,"y":0,"z":0},{"element":"C","x":-0.7,"y":-1.2,"z":0},{"element":"C","x":0.7,"y":-1.2,"z":0},{"element":"N","x":2.8,"y":0,"z":0},{"element":"O","x":3.4,"y":1.0,"z":0},{"element":"O","x":3.4,"y":-1.0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":2},{"source":1,"target":2,"order":1},{"source":2,"target":3,"order":2},{"source":3,"target":4,"order":1},{"source":4,"target":5,"order":2},{"source":5,"target":0,"order":1},{"source":0,"target":6,"order":1},{"source":6,"target":7,"order":2},{"source":6,"target":8,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "chlorobenzene",
+    "formula": "C6H5Cl",
+    "category": "organic",
+    "description": "An aromatic organic compound heavily used as an intermediate.",
+    "atoms": [{"element":"C","x":1.4,"y":0,"z":0},{"element":"C","x":0.7,"y":1.2,"z":0},{"element":"C","x":-0.7,"y":1.2,"z":0},{"element":"C","x":-1.4,"y":0,"z":0},{"element":"C","x":-0.7,"y":-1.2,"z":0},{"element":"C","x":0.7,"y":-1.2,"z":0},{"element":"Cl","x":3.1,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":2},{"source":1,"target":2,"order":1},{"source":2,"target":3,"order":2},{"source":3,"target":4,"order":1},{"source":4,"target":5,"order":2},{"source":5,"target":0,"order":1},{"source":0,"target":6,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "acetyl chloride",
+    "formula": "CH3COCl",
+    "category": "organic",
+    "description": "An acid chloride derived from acetic acid.",
+    "atoms": [{"element":"C","x":-0.8,"y":0,"z":0},{"element":"C","x":0.7,"y":0,"z":0},{"element":"O","x":1.3,"y":1.1,"z":0},{"element":"Cl","x":1.5,"y":-1.3,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":1,"target":2,"order":2},{"source":1,"target":3,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "trinitrotoluene",
+    "formula": "C7H5N3O6",
+    "category": "organic",
+    "description": "A widely known explosive compound commonly called TNT.",
+    "atoms": [{"element":"C","x":1.4,"y":0,"z":0},{"element":"C","x":0.7,"y":1.2,"z":0},{"element":"C","x":-0.7,"y":1.2,"z":0},{"element":"C","x":-1.4,"y":0,"z":0},{"element":"C","x":-0.7,"y":-1.2,"z":0},{"element":"C","x":0.7,"y":-1.2,"z":0},{"element":"C","x":2.9,"y":0,"z":0},{"element":"N","x":1.4,"y":2.4,"z":0},{"element":"O","x":2.4,"y":2.8,"z":0},{"element":"O","x":0.4,"y":3.2,"z":0},{"element":"N","x":-2.8,"y":0,"z":0},{"element":"O","x":-3.4,"y":1.0,"z":0},{"element":"O","x":-3.4,"y":-1.0,"z":0},{"element":"N","x":1.4,"y":-2.4,"z":0},{"element":"O","x":2.4,"y":-2.8,"z":0},{"element":"O","x":0.4,"y":-3.2,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":2},{"source":1,"target":2,"order":1},{"source":2,"target":3,"order":2},{"source":3,"target":4,"order":1},{"source":4,"target":5,"order":2},{"source":5,"target":0,"order":1},{"source":0,"target":6,"order":1},{"source":1,"target":7,"order":1},{"source":7,"target":8,"order":2},{"source":7,"target":9,"order":1},{"source":3,"target":10,"order":1},{"source":10,"target":11,"order":2},{"source":10,"target":12,"order":1},{"source":5,"target":13,"order":1},{"source":13,"target":14,"order":2},{"source":13,"target":15,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "m-nitrotoluene",
+    "formula": "C7H7NO2",
+    "category": "organic",
+    "description": "A meta-substituted nitrotoluene.",
+    "atoms": [{"element":"C","x":1.4,"y":0,"z":0},{"element":"C","x":0.7,"y":1.2,"z":0},{"element":"C","x":-0.7,"y":1.2,"z":0},{"element":"C","x":-1.4,"y":0,"z":0},{"element":"C","x":-0.7,"y":-1.2,"z":0},{"element":"C","x":0.7,"y":-1.2,"z":0},{"element":"C","x":2.9,"y":0,"z":0},{"element":"N","x":-1.4,"y":2.4,"z":0},{"element":"O","x":-0.8,"y":3.4,"z":0},{"element":"O","x":-2.6,"y":2.4,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":2},{"source":1,"target":2,"order":1},{"source":2,"target":3,"order":2},{"source":3,"target":4,"order":1},{"source":4,"target":5,"order":2},{"source":5,"target":0,"order":1},{"source":0,"target":6,"order":1},{"source":2,"target":7,"order":1},{"source":7,"target":8,"order":2},{"source":7,"target":9,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "alkyl halide",
+    "formula": "CH3Cl",
+    "category": "organic",
+    "description": "A generic representation of an alkyl halide.",
+    "atoms": [{"element":"C","x":0,"y":0,"z":0},{"element":"Cl","x":1.7,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "alkyl chloride",
+    "formula": "CH3Cl",
+    "category": "organic",
+    "description": "A generic representation of an alkyl chloride.",
+    "atoms": [{"element":"C","x":0,"y":0,"z":0},{"element":"Cl","x":1.7,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "grignard reagent",
+    "formula": "CH3MgBr",
+    "category": "organic",
+    "description": "A prototypical Grignard reagent.",
+    "atoms": [{"element":"C","x":-1.8,"y":0,"z":0},{"element":"Mg","x":0,"y":0,"z":0},{"element":"Br","x":2.4,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":1,"target":2,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "methyl magnesium bromide",
+    "formula": "CH3MgBr",
+    "category": "organic",
+    "description": "A specific Grignard reagent.",
+    "atoms": [{"element":"C","x":-1.8,"y":0,"z":0},{"element":"Mg","x":0,"y":0,"z":0},{"element":"Br","x":2.4,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":1,"target":2,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "magnesium hydroxyl bromide",
+    "formula": "Mg(OH)Br",
+    "category": "inorganic",
+    "description": "An intermediate basic magnesium salt.",
+    "atoms": [{"element":"O","x":-1.5,"y":0,"z":0},{"element":"Mg","x":0,"y":0,"z":0},{"element":"Br","x":2.4,"y":0,"z":0},{"element":"H","x":-2.4,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":1,"target":2,"order":1},{"source":0,"target":3,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "nucleophile",
+    "formula": "OH-",
+    "category": "inorganic",
+    "description": "A prototypical nucleophile representation (hydroxide).",
+    "atoms": [{"element":"O","x":0,"y":0,"z":0},{"element":"H","x":0.9,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "substitution product",
+    "formula": "CH3OH",
+    "category": "organic",
+    "description": "A generic substitution product represented by methanol.",
+    "atoms": [{"element":"C","x":-0.7,"y":0,"z":0},{"element":"O","x":0.7,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "halide ion",
+    "formula": "Cl-",
+    "category": "inorganic",
+    "description": "A monovalent halogen anion.",
+    "atoms": [{"element":"Cl","x":0,"y":0,"z":0}],
+    "bonds": [],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "primary amine",
+    "formula": "CH3NH2",
+    "category": "organic",
+    "description": "The simplest primary aliphatic amine.",
+    "atoms": [{"element":"C","x":-0.7,"y":0,"z":0},{"element":"N","x":0.7,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "alkylammonium chloride salt",
+    "formula": "CH3NH3Cl",
+    "category": "organic",
+    "description": "A generic representation of an amine salt.",
+    "atoms": [{"element":"C","x":-0.7,"y":0,"z":0},{"element":"N","x":0.7,"y":0,"z":0},{"element":"Cl","x":3.5,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "diazonium chloride",
+    "formula": "CH3N2Cl",
+    "category": "organic",
+    "description": "A generic representation of a diazonium salt.",
+    "atoms": [{"element":"C","x":-1.4,"y":0,"z":0},{"element":"N","x":0,"y":0,"z":0},{"element":"N","x":1.1,"y":0,"z":0},{"element":"Cl","x":3.5,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":1,"target":2,"order":3}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "secondary alcohol",
+    "formula": "CH3CH(OH)CH3",
+    "category": "organic",
+    "description": "Represented by isopropanol as a generic secondary alcohol.",
+    "atoms": [{"element":"C","x":-1.4,"y":-0.8,"z":0},{"element":"C","x":0,"y":0,"z":0},{"element":"C","x":1.4,"y":-0.8,"z":0},{"element":"O","x":0,"y":1.4,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":1,"target":2,"order":1},{"source":1,"target":3,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "ketone",
+    "formula": "CH3COCH3",
+    "category": "organic",
+    "description": "Represented by acetone as a generic ketone.",
+    "atoms": [{"element":"C","x":-1.3,"y":-0.3,"z":0},{"element":"C","x":0,"y":0.5,"z":0},{"element":"C","x":1.3,"y":-0.3,"z":0},{"element":"O","x":0,"y":1.7,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":1,"target":2,"order":1},{"source":1,"target":3,"order":2}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "carboxylic acid",
+    "formula": "CH3COOH",
+    "category": "organic",
+    "description": "Represented by acetic acid as a generic carboxylic acid.",
+    "atoms": [{"element":"C","x":-0.7,"y":0,"z":0},{"element":"C","x":0.7,"y":0,"z":0},{"element":"O","x":1.3,"y":1.1,"z":0},{"element":"O","x":1.3,"y":-1.1,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":1,"target":2,"order":2},{"source":1,"target":3,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "acyl chloride",
+    "formula": "CH3COCl",
+    "category": "organic",
+    "description": "A generic representation of an acyl chloride.",
+    "atoms": [{"element":"C","x":-0.7,"y":0,"z":0},{"element":"C","x":0.7,"y":0,"z":0},{"element":"O","x":1.3,"y":1.1,"z":0},{"element":"Cl","x":1.5,"y":-1.3,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":1,"target":2,"order":2},{"source":1,"target":3,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "acid anhydride",
+    "formula": "CH3COOCOCH3",
+    "category": "organic",
+    "description": "Represented by acetic anhydride.",
+    "atoms": [{"element":"C","x":-2.4,"y":-0.8,"z":0},{"element":"C","x":-1.2,"y":0,"z":0},{"element":"O","x":-1.2,"y":1.2,"z":0},{"element":"O","x":0,"y":-0.8,"z":0},{"element":"C","x":1.2,"y":0,"z":0},{"element":"O","x":1.2,"y":1.2,"z":0},{"element":"C","x":2.4,"y":-0.8,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":1,"target":2,"order":2},{"source":1,"target":3,"order":1},{"source":3,"target":4,"order":1},{"source":4,"target":5,"order":2},{"source":4,"target":6,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "amide",
+    "formula": "CH3CONH2",
+    "category": "organic",
+    "description": "A generic representation of an amide (acetamide).",
+    "atoms": [{"element":"C","x":-0.7,"y":0,"z":0},{"element":"C","x":0.7,"y":0,"z":0},{"element":"O","x":1.3,"y":1.1,"z":0},{"element":"N","x":1.3,"y":-1.1,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":1,"target":2,"order":2},{"source":1,"target":3,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "triglyceride",
+    "formula": "C9H14O6",
+    "category": "organic",
+    "description": "Represented by the minimal backbone proxy triformin to conserve token bounds.",
+    "atoms": [{"element":"C","x":0,"y":1.5,"z":0},{"element":"C","x":0,"y":0,"z":0},{"element":"C","x":0,"y":-1.5,"z":0},{"element":"O","x":1.2,"y":1.5,"z":0},{"element":"O","x":1.2,"y":0,"z":0},{"element":"O","x":1.2,"y":-1.5,"z":0},{"element":"C","x":2.2,"y":1.5,"z":0},{"element":"C","x":2.2,"y":0,"z":0},{"element":"C","x":2.2,"y":-1.5,"z":0},{"element":"O","x":2.2,"y":2.7,"z":0},{"element":"O","x":2.2,"y":1.2,"z":0},{"element":"O","x":2.2,"y":-0.3,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":1,"target":2,"order":1},{"source":0,"target":3,"order":1},{"source":1,"target":4,"order":1},{"source":2,"target":5,"order":1},{"source":3,"target":6,"order":1},{"source":4,"target":7,"order":1},{"source":5,"target":8,"order":1},{"source":6,"target":9,"order":2},{"source":7,"target":10,"order":2},{"source":8,"target":11,"order":2}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "soap",
+    "formula": "C8H15NaO2",
+    "category": "organic",
+    "description": "Represented by sodium octanoate as a prototypical soap molecule skeleton.",
+    "atoms": [{"element":"C","x":0,"y":0,"z":0},{"element":"C","x":1.2,"y":0.7,"z":0},{"element":"C","x":2.4,"y":0,"z":0},{"element":"C","x":3.6,"y":0.7,"z":0},{"element":"C","x":4.8,"y":0,"z":0},{"element":"C","x":6.0,"y":0.7,"z":0},{"element":"C","x":7.2,"y":0,"z":0},{"element":"C","x":8.4,"y":0.7,"z":0},{"element":"O","x":8.4,"y":1.9,"z":0},{"element":"O","x":9.4,"y":0,"z":0},{"element":"Na","x":11.5,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1},{"source":1,"target":2,"order":1},{"source":2,"target":3,"order":1},{"source":3,"target":4,"order":1},{"source":4,"target":5,"order":1},{"source":5,"target":6,"order":1},{"source":6,"target":7,"order":1},{"source":7,"target":8,"order":2},{"source":7,"target":9,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  },
+  {
+    "molecule": "chlorine monoxide radical",
+    "formula": "ClO",
+    "category": "inorganic",
+    "description": "An important radical in atmospheric ozone depletion.",
+    "atoms": [{"element":"Cl","x":0,"y":0,"z":0},{"element":"O","x":1.5,"y":0,"z":0}],
+    "bonds": [{"source":0,"target":1,"order":1}],
+    "createdAt": "2026-08-02T13:08:00Z",
+    "updatedAt": "2026-08-02T13:08:00Z"
+  }
+]
