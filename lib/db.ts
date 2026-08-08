@@ -5,7 +5,7 @@ import { Sequelize, DataTypes, Model, Optional } from "sequelize";
 // Load environment variables from .env.local before Sequelize initialization
 dotenv.config({ path: path.resolve(process.cwd(), ".env.local") });
 
-// Initialize Sequelize connection using our root environment variables
+// Initialize Sequelize connection using environment variables
 const sequelize = new Sequelize(
   process.env.DB_NAME || "chemistry_db",
   process.env.DB_USER || "root",
@@ -13,7 +13,7 @@ const sequelize = new Sequelize(
   {
     host: process.env.DB_HOST || "127.0.0.1",
     dialect: "mysql",
-    logging: false, // Disables distracting SQL log outputs in your command terminal
+    logging: false,
   }
 );
 
@@ -22,27 +22,30 @@ const sequelize = new Sequelize(
 // ==========================================
 export interface MoleculeAttributes {
   id: number;
-  molecule: string;      // Name of the compound (e.g., "methane")
-  formula: string;       // Chemical formula (e.g., "CH4")
-  category: string;      // "basic", "organic", "inorganic", or "biomolecules"
-  description: string;   // Brief description for the textbook cards
-  atoms: object;         // Stores the array of atomic positions as JSON
-  bonds: object;         // Stores the array of bond links as JSON
+  molecule: string;
+  formula: string;
+  category: string;
+  description?: string | null;
+  atoms: object;
+  bonds: object;
+  createdAt?: Date;
+  updatedAt?: Date;
 }
 
-interface MoleculeCreationAttributes extends Optional<MoleculeAttributes, "id"> {}
+interface MoleculeCreationAttributes extends Optional<MoleculeAttributes, "id" | "category" | "description"> {}
 
 export class Molecule extends Model<MoleculeAttributes, MoleculeCreationAttributes> implements MoleculeAttributes {
   declare public id: number;
   declare public molecule: string;
   declare public formula: string;
   declare public category: string;
-  declare public description: string;
+  declare public description: string | null;
   declare public atoms: object;
   declare public bonds: object;
+  declare public readonly createdAt: Date;
+  declare public readonly updatedAt: Date;
 }
 
-// Register only if the model is not already registered on this sequelize instance
 if (!sequelize.models.Molecule) {
   Molecule.init(
     {
@@ -57,11 +60,11 @@ if (!sequelize.models.Molecule) {
         unique: "idx_unique_molecule",
       },
       formula: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(50),
         allowNull: false,
       },
       category: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(100),
         allowNull: false,
         defaultValue: "basic",
       },
@@ -95,7 +98,7 @@ export interface UserAttributes {
   email: string;
   passwordHash: string;
   name: string;
-  institution: string; // School or College Name
+  institution: string;
   resetToken?: string | null;
   resetTokenExpiry?: Date | null;
   createdAt?: Date;
@@ -128,13 +131,12 @@ if (!sequelize.models.User) {
         type: DataTypes.STRING,
         allowNull: false,
         unique: "idx_unique_user_email",
-        validate: {
-          isEmail: true,
-        },
+        validate: { isEmail: true },
       },
       passwordHash: {
         type: DataTypes.STRING,
         allowNull: false,
+        field: "password_hash", // Maps JS camelCase to SQL snake_case
       },
       name: {
         type: DataTypes.STRING,
@@ -147,42 +149,49 @@ if (!sequelize.models.User) {
       resetToken: {
         type: DataTypes.STRING,
         allowNull: true,
+        field: "reset_token",
       },
       resetTokenExpiry: {
         type: DataTypes.DATE,
         allowNull: true,
+        field: "reset_token_expiry",
       },
     },
     {
       sequelize,
       modelName: "User",
       tableName: "users",
+      underscored: true, // Auto-maps createdAt -> created_at & updatedAt -> updated_at
       timestamps: true,
     }
   );
 }
 
 // ==========================================
-// 3. REACTION MODEL (For 3D simulator)
+// 3. REACTION MODEL
 // ==========================================
 export interface ReactionAttributes {
   id: number;
   name: string;
-  category: string;  // "organic" or "inorganic"
-  description: string;
-  reactants: object; // Stores JSON: Array<{ molecule: string, coefficient: number }>
-  products: object;  // Stores JSON: Array<{ molecule: string, coefficient: number }>
+  category: string;
+  description?: string | null;
+  reactants: object;
+  products: object;
+  createdAt?: Date;
+  updatedAt?: Date;
 }
 
-interface ReactionCreationAttributes extends Optional<ReactionAttributes, "id" | "category"> {}
+interface ReactionCreationAttributes extends Optional<ReactionAttributes, "id" | "category" | "description"> {}
 
 export class Reaction extends Model<ReactionAttributes, ReactionCreationAttributes> implements ReactionAttributes {
   declare public id: number;
   declare public name: string;
   declare public category: string;
-  declare public description: string;
+  declare public description: string | null;
   declare public reactants: object;
   declare public products: object;
+  declare public readonly createdAt: Date;
+  declare public readonly updatedAt: Date;
 }
 
 if (!sequelize.models.Reaction) {
@@ -201,7 +210,7 @@ if (!sequelize.models.Reaction) {
       category: {
         type: DataTypes.STRING,
         allowNull: false,
-        defaultValue: "inorganic", // Default category ("organic" | "inorganic")
+        defaultValue: "inorganic",
       },
       description: {
         type: DataTypes.TEXT,
@@ -226,6 +235,155 @@ if (!sequelize.models.Reaction) {
 }
 
 // ==========================================
+// 4. CHAPTER MODEL (Quizzes)
+// ==========================================
+export interface ChapterAttributes {
+  id: number;
+  class: number;
+  chapterNumber: number;
+  chapterTitle: string;
+  createdAt?: Date;
+}
+
+interface ChapterCreationAttributes extends Optional<ChapterAttributes, "id"> {}
+
+export class Chapter extends Model<ChapterAttributes, ChapterCreationAttributes> implements ChapterAttributes {
+  declare public id: number;
+  declare public class: number;
+  declare public chapterNumber: number;
+  declare public chapterTitle: string;
+  declare public readonly createdAt: Date;
+}
+
+if (!sequelize.models.Chapter) {
+  Chapter.init(
+    {
+      id: {
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
+        primaryKey: true,
+      },
+      class: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: { isIn: [[9, 10, 11, 12]] },
+      },
+      chapterNumber: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        field: "chapter_number",
+      },
+      chapterTitle: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        field: "chapter_title",
+      },
+    },
+    {
+      sequelize,
+      modelName: "Chapter",
+      tableName: "chapters",
+      underscored: true,
+      updatedAt: false, // Matches your SQL which only has created_at
+    }
+  );
+}
+
+// ==========================================
+// 5. QUESTION MODEL (Quizzes)
+// ==========================================
+export interface QuestionAttributes {
+  id: number;
+  chapterId: number;
+  questionText: string;
+  optionA: string;
+  optionB: string;
+  optionC: string;
+  optionD: string;
+  correctOption: "A" | "B" | "C" | "D";
+  explanation?: string | null;
+  createdAt?: Date;
+}
+
+interface QuestionCreationAttributes extends Optional<QuestionAttributes, "id" | "explanation"> {}
+
+export class Question extends Model<QuestionAttributes, QuestionCreationAttributes> implements QuestionAttributes {
+  declare public id: number;
+  declare public chapterId: number;
+  declare public questionText: string;
+  declare public optionA: string;
+  declare public optionB: string;
+  declare public optionC: string;
+  declare public optionD: string;
+  declare public correctOption: "A" | "B" | "C" | "D";
+  declare public explanation: string | null;
+  declare public readonly createdAt: Date;
+}
+
+if (!sequelize.models.Question) {
+  Question.init(
+    {
+      id: {
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
+        primaryKey: true,
+      },
+      chapterId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        field: "chapter_id",
+      },
+      questionText: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+        field: "question_text",
+      },
+      optionA: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        field: "option_a",
+      },
+      optionB: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        field: "option_b",
+      },
+      optionC: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        field: "option_c",
+      },
+      optionD: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        field: "option_d",
+      },
+      correctOption: {
+        type: DataTypes.ENUM("A", "B", "C", "D"),
+        allowNull: false,
+        field: "correct_option",
+      },
+      explanation: {
+        type: DataTypes.TEXT,
+        allowNull: true,
+        field: "explanation",
+      },
+    },
+    {
+      sequelize,
+      modelName: "Question",
+      tableName: "questions",
+      underscored: true,
+      updatedAt: false,
+    }
+  );
+}
+
+// Set up associations
+Chapter.hasMany(Question, { foreignKey: "chapter_id", onDelete: "CASCADE" });
+Question.belongsTo(Chapter, { foreignKey: "chapter_id" });
+
+// ==========================================
 // DATABASE ASSOCIATION & SYNC
 // ==========================================
 let syncPromise: Promise<void> | null = null;
@@ -233,7 +391,7 @@ let syncPromise: Promise<void> | null = null;
 export async function ensureDbSynced(): Promise<void> {
   if (!syncPromise) {
     syncPromise = sequelize
-      .sync({ alter: true }) // Adjusts table schemas to match our definitions automatically
+      .sync({ alter: true })
       .then(() => {
         console.log("MySQL Database synced successfully via Sequelize!");
       })
@@ -247,8 +405,6 @@ export async function ensureDbSynced(): Promise<void> {
   return syncPromise;
 }
 
-// Start schema sync immediately when this module loads
 void ensureDbSynced();
 
-// Clean exports
 export { sequelize };
