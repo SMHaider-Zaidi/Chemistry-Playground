@@ -1,31 +1,29 @@
-import { QuizSystem } from "@/components/quiz-system"
-import { Button } from "@/components/ui/button"
-import { ArrowLeft, Users } from "lucide-react"
+"use client"
+
 import Link from "next/link"
+import { Navigation } from "@/components/navigation"
+import { QuizSystem } from "@/components/quiz-system"
+import { ChevronLeft } from "lucide-react"
 
 export default function QuizzesPage() {
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-16 items-center justify-between">
-          <div className="flex items-center space-x-4">
-            <Link href="/">
-              <Button variant="ghost" size="sm">
-                <ArrowLeft className="h-4 w-4 mr-2" />
-                Back to Home
-              </Button>
-            </Link>
-            <div className="flex items-center space-x-2">
-              <Users className="h-6 w-6 text-secondary" />
-              <h1 className="text-lg font-serif font-bold">Quizzes</h1>
-            </div>
-          </div>
-        </div>
-      </header>
+      {/* Imported Navigation Component */}
+      <Navigation />
+
+      {/* Sub-header Navigation ("Back to Home") */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-2">
+        <Link 
+          href="/" 
+          className="inline-flex items-center space-x-1 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors"
+        >
+          <ChevronLeft className="h-4 w-4" />
+          <span>Back to Home</span>
+        </Link>
+      </div>
 
       {/* Main Content */}
-      <main className="container py-8">
+      <main className="py-4">
         <QuizSystem />
       </main>
     </div>

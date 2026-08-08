@@ -25,7 +25,8 @@ interface Chapter {
   id: number
   chapter_number: number
   title: string
-  class_level: number
+  class_level?: number | string
+  class?: number | string
   question_count: number
 }
 
@@ -59,8 +60,9 @@ function QuestionCard({
         />
       </CardHeader>
       <CardContent className="space-y-4">
+        {/* Fixed: Returns "" instead of undefined when selectedAnswer is null */}
         <RadioGroup
-          value={selectedAnswer?.toString()}
+          value={selectedAnswer !== null && selectedAnswer !== undefined ? selectedAnswer.toString() : ""}
           onValueChange={(val) => onAnswerSelect(Number(val))}
           disabled={showResult}
         >
@@ -69,7 +71,7 @@ function QuestionCard({
               <RadioGroupItem value={index.toString()} id={`option-${index}`} />
               <Label
                 htmlFor={`option-${index}`}
-                className={`flex-1 cursor-pointer p-2 rounded ${
+                className={`flex-1 cursor-pointer p-2 rounded transition-colors ${
                   showResult && index === question.correctAnswer
                     ? "bg-green-100 text-green-800 border border-green-300 dark:bg-green-950 dark:text-green-200"
                     : showResult && index === selectedAnswer && index !== question.correctAnswer
@@ -133,7 +135,7 @@ function QuizViewer({ chapter, onBack }: { chapter: Chapter; onBack: () => void 
 
   if (questions.length === 0) {
     return (
-      <div className="text-center py-12 space-y-4">
+      <div className="text-center py-12 space-y-4 max-w-xl mx-auto">
         <h3 className="text-xl font-bold">No questions available yet.</h3>
         <Button onClick={onBack}>Back to Chapters</Button>
       </div>
@@ -190,7 +192,7 @@ function QuizViewer({ chapter, onBack }: { chapter: Chapter; onBack: () => void 
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 max-w-4xl mx-auto">
       <div className="flex items-center justify-between">
         <Button variant="outline" onClick={onBack}>Back to Quizzes</Button>
         <span className="text-sm text-muted-foreground">Question {currentIndex + 1} of {questions.length}</span>
@@ -249,19 +251,27 @@ export function QuizSystem() {
   }, [])
 
   if (selectedChapter) {
-    return <QuizViewer chapter={selectedChapter} onBack={() => setSelectedChapter(null)} />
+    return (
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+        <QuizViewer chapter={selectedChapter} onBack={() => setSelectedChapter(null)} />
+      </div>
+    )
   }
 
-  const filteredChapters = chapters.filter((c) => c.class_level === Number(selectedClass))
+  // Flexibly check class level against string or number
+  const filteredChapters = chapters.filter((c) => {
+    const rawClass = c.class_level ?? c.class
+    return String(rawClass) === String(selectedClass)
+  })
 
   return (
-    <div className="space-y-6">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full space-y-6">
       <div>
         <h2 className="text-2xl font-serif font-bold mb-1">Chemistry Quizzes</h2>
         <p className="text-muted-foreground">Select your class level and topic to practice</p>
       </div>
 
-      <Tabs defaultValue="9" onValueChange={setSelectedClass}>
+      <Tabs defaultValue="9" value={selectedClass} onValueChange={setSelectedClass}>
         <TabsList className="grid grid-cols-4 w-full max-w-md">
           <TabsTrigger value="9">Class 9</TabsTrigger>
           <TabsTrigger value="10">Class 10</TabsTrigger>
@@ -275,15 +285,18 @@ export function QuizSystem() {
           <Loader2 className="h-8 w-8 animate-spin text-primary" />
         </div>
       ) : filteredChapters.length === 0 ? (
-        <Card className="p-8 text-center border-dashed">
+        <Card className="p-8 text-center border-dashed max-w-2xl mx-auto">
           <Lock className="h-10 w-10 mx-auto text-muted-foreground mb-3" />
           <h3 className="font-semibold text-lg">Class {selectedClass} Content Coming Soon</h3>
-          <p className="text-sm text-muted-foreground mt-1">We are currently adding chapters and questions for Class {selectedClass}. Check back soon!</p>
+          <p className="text-sm text-muted-foreground mt-1">
+            We are currently adding chapters and questions for Class {selectedClass}. Check back soon!
+          </p>
         </Card>
       ) : (
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredChapters.map((ch) => {
-            const hasQuestions = ch.question_count > 0
+            const count = Number(ch.question_count) || 0
+            const hasQuestions = count > 0
 
             return (
               <Card
@@ -301,7 +314,7 @@ export function QuizSystem() {
                       Chapter {ch.chapter_number}
                     </Badge>
                     {hasQuestions ? (
-                      <span className="text-xs text-muted-foreground">{ch.question_count} questions</span>
+                      <span className="text-xs text-muted-foreground">{count} questions</span>
                     ) : (
                       <Badge variant="outline" className="text-xs border-amber-500 text-amber-600 dark:text-amber-400">
                         Coming Soon 🚀
