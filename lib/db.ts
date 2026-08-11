@@ -55,7 +55,7 @@ if (!sequelize.models.Molecule) {
         primaryKey: true,
       },
       molecule: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(255),
         allowNull: false,
         unique: "idx_unique_molecule",
       },
@@ -128,26 +128,26 @@ if (!sequelize.models.User) {
         primaryKey: true,
       },
       email: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(255),
         allowNull: false,
         unique: "idx_unique_user_email",
         validate: { isEmail: true },
       },
       passwordHash: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(255),
         allowNull: false,
-        field: "password_hash", // Maps JS camelCase to SQL snake_case
+        field: "password_hash",
       },
       name: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(255),
         allowNull: false,
       },
       institution: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(255),
         allowNull: false,
       },
       resetToken: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(255),
         allowNull: true,
         field: "reset_token",
       },
@@ -161,7 +161,7 @@ if (!sequelize.models.User) {
       sequelize,
       modelName: "User",
       tableName: "users",
-      underscored: true, // Auto-maps createdAt -> created_at & updatedAt -> updated_at
+      underscored: true,
       timestamps: true,
     }
   );
@@ -173,7 +173,6 @@ if (!sequelize.models.User) {
 export interface ReactionAttributes {
   id: number;
   name: string;
-  category: string;
   description?: string | null;
   reactants: object;
   products: object;
@@ -181,12 +180,11 @@ export interface ReactionAttributes {
   updatedAt?: Date;
 }
 
-interface ReactionCreationAttributes extends Optional<ReactionAttributes, "id" | "category" | "description"> {}
+interface ReactionCreationAttributes extends Optional<ReactionAttributes, "id" | "description"> {}
 
 export class Reaction extends Model<ReactionAttributes, ReactionCreationAttributes> implements ReactionAttributes {
   declare public id: number;
   declare public name: string;
-  declare public category: string;
   declare public description: string | null;
   declare public reactants: object;
   declare public products: object;
@@ -203,14 +201,9 @@ if (!sequelize.models.Reaction) {
         primaryKey: true,
       },
       name: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(255),
         allowNull: false,
         unique: "idx_unique_reaction_name",
-      },
-      category: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        defaultValue: "inorganic",
       },
       description: {
         type: DataTypes.TEXT,
@@ -274,7 +267,7 @@ if (!sequelize.models.Chapter) {
         field: "chapter_number",
       },
       chapterTitle: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(255),
         allowNull: false,
         field: "chapter_title",
       },
@@ -284,7 +277,7 @@ if (!sequelize.models.Chapter) {
       modelName: "Chapter",
       tableName: "chapters",
       underscored: true,
-      updatedAt: false, // Matches your SQL which only has created_at
+      updatedAt: false,
     }
   );
 }
@@ -302,10 +295,12 @@ export interface QuestionAttributes {
   optionD: string;
   correctOption: "A" | "B" | "C" | "D";
   explanation?: string | null;
+  difficulty?: "easy" | "medium" | "hard";
+  topic?: string | null;
   createdAt?: Date;
 }
 
-interface QuestionCreationAttributes extends Optional<QuestionAttributes, "id" | "explanation"> {}
+interface QuestionCreationAttributes extends Optional<QuestionAttributes, "id" | "explanation" | "difficulty" | "topic"> {}
 
 export class Question extends Model<QuestionAttributes, QuestionCreationAttributes> implements QuestionAttributes {
   declare public id: number;
@@ -317,6 +312,8 @@ export class Question extends Model<QuestionAttributes, QuestionCreationAttribut
   declare public optionD: string;
   declare public correctOption: "A" | "B" | "C" | "D";
   declare public explanation: string | null;
+  declare public difficulty: "easy" | "medium" | "hard";
+  declare public topic: string | null;
   declare public readonly createdAt: Date;
 }
 
@@ -339,22 +336,22 @@ if (!sequelize.models.Question) {
         field: "question_text",
       },
       optionA: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(255),
         allowNull: false,
         field: "option_a",
       },
       optionB: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(255),
         allowNull: false,
         field: "option_b",
       },
       optionC: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(255),
         allowNull: false,
         field: "option_c",
       },
       optionD: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(255),
         allowNull: false,
         field: "option_d",
       },
@@ -367,6 +364,17 @@ if (!sequelize.models.Question) {
         type: DataTypes.TEXT,
         allowNull: true,
         field: "explanation",
+      },
+      difficulty: {
+        type: DataTypes.ENUM("easy", "medium", "hard"),
+        allowNull: true,
+        defaultValue: "medium",
+        field: "difficulty",
+      },
+      topic: {
+        type: DataTypes.STRING(100),
+        allowNull: true,
+        field: "topic",
       },
     },
     {
@@ -391,7 +399,7 @@ let syncPromise: Promise<void> | null = null;
 export async function ensureDbSynced(): Promise<void> {
   if (!syncPromise) {
     syncPromise = sequelize
-      .sync({ alter: true })
+      .sync()
       .then(() => {
         console.log("MySQL Database synced successfully via Sequelize!");
       })
