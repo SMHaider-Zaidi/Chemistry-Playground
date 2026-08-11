@@ -21,11 +21,7 @@ async function seedDatabase() {
   try {
     console.log('Connecting to database...');
     await sequelize.authenticate();
-    console.log('Database connection established successfully.');
-
-    // Sync models with MySQL (alter: true ensures new schema columns get added)
-    await sequelize.sync({ alter: true });
-    console.log('Database schema synchronized.\n');
+    console.log('Database connection established successfully.\n');
 
     // ==========================================
     // 1. SEED MOLECULES (Reactions3D_Details.json)
@@ -151,6 +147,8 @@ async function seedDatabase() {
             optionD: q.option_d,
             correctOption: correctOption as 'A' | 'B' | 'C' | 'D',
             explanation: q.explanation || null,
+            difficulty: q.difficulty || 'medium',
+            topic: q.topic || null,
           };
 
           if (existingQuestion) {
