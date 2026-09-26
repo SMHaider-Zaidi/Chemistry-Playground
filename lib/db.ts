@@ -178,6 +178,7 @@ export interface ReactionAttributes {
   products: object;
   createdAt?: Date;
   updatedAt?: Date;
+  category?: string | null;
 }
 
 interface ReactionCreationAttributes extends Optional<ReactionAttributes, "id" | "description"> {}
@@ -186,10 +187,52 @@ export class Reaction extends Model<ReactionAttributes, ReactionCreationAttribut
   declare public id: number;
   declare public name: string;
   declare public description: string | null;
+  declare public category: string | null;
   declare public reactants: object;
   declare public products: object;
   declare public readonly createdAt: Date;
   declare public readonly updatedAt: Date;
+}
+
+export interface QuizAttemptAttributes {
+  id: number;
+  userId: number;
+  quizId: number;
+  chapterName: string;
+  score: number;
+  totalQuestions: number;
+  percentage: number;
+  createdAt?: Date;
+  updatedAt?: Date;
+}
+
+interface QuizAttemptCreationAttributes extends Optional<QuizAttemptAttributes, "id" | "percentage"> {}
+
+export class QuizAttempt extends Model<QuizAttemptAttributes, QuizAttemptCreationAttributes> implements QuizAttemptAttributes {
+  declare public id: number;
+  declare public userId: number;
+  declare public quizId: number;
+  declare public chapterName: string;
+  declare public score: number;
+  declare public totalQuestions: number;
+  declare public percentage: number;
+  declare public readonly createdAt: Date;
+  declare public readonly updatedAt: Date;
+}
+
+if (!sequelize.models.QuizAttempt) {
+  QuizAttempt.init(
+    {
+      id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
+      userId: { type: DataTypes.INTEGER, allowNull: false, field: "user_id" },
+      quizId: { type: DataTypes.INTEGER, allowNull: false, field: "quiz_id" },
+      chapterName: { type: DataTypes.STRING(255), allowNull: false, field: "chapter_name" },
+      score: { type: DataTypes.INTEGER, allowNull: false },
+      totalQuestions: { type: DataTypes.INTEGER, allowNull: false, field: "total_questions" },
+      percentage: { type: DataTypes.DECIMAL(5, 2), allowNull: false },
+    },
+    { sequelize, modelName: "QuizAttempt", tableName: "quiz_attempts", underscored: true, timestamps: true }
+  );
 }
 
 if (!sequelize.models.Reaction) {
@@ -207,6 +250,10 @@ if (!sequelize.models.Reaction) {
       },
       description: {
         type: DataTypes.TEXT,
+        allowNull: true,
+      },
+      category: {
+        type: DataTypes.STRING(100),
         allowNull: true,
       },
       reactants: {
@@ -399,7 +446,7 @@ let syncPromise: Promise<void> | null = null;
 export async function ensureDbSynced(): Promise<void> {
   if (!syncPromise) {
     syncPromise = sequelize
-      .sync()
+      .sync({ alter: true })
       .then(() => {
         console.log("MySQL Database synced successfully via Sequelize!");
       })

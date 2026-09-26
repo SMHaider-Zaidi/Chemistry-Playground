@@ -505,7 +505,14 @@ function normalizeMoleculeData(raw: any): JSONMolecule {
   })
 
   const normalizedAtoms = (raw.atoms || []).map((atom: any, idx: number) => {
-    const rawPos = atom.position || atom.location || [0, 0, 0]
+    const rawPos = Array.isArray(atom.position)
+      ? atom.position
+      : Array.isArray(atom.location)
+      ? atom.location
+      : atom.position || atom.location ||
+        (atom.x !== undefined || atom.y !== undefined || atom.z !== undefined
+          ? [Number(atom.x || 0), Number(atom.y || 0), Number(atom.z || 0)]
+          : [0, 0, 0])
     let zCoord = Number(rawPos[2] || 0)
     
     if (isFlat2DLayout && zCoord === 0) {
@@ -535,6 +542,9 @@ function normalizeMoleculeData(raw: any): JSONMolecule {
     if (bond.atoms && Array.isArray(bond.atoms) && bond.atoms.length >= 2) {
       fromIdx = Number(bond.atoms[0])
       toIdx = Number(bond.atoms[1])
+    } else if (bond.source !== undefined || bond.target !== undefined) {
+      fromIdx = bond.source !== undefined ? Number(bond.source) : 0
+      toIdx = bond.target !== undefined ? Number(bond.target) : 0
     } else {
       fromIdx = bond.from !== undefined ? Number(bond.from) : 0
       toIdx = bond.to !== undefined ? Number(bond.to) : 0

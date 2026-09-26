@@ -1,8 +1,6 @@
-import { NextResponse } from "next/server";
-import { Reaction, Molecule, ensureDbSynced } from "@/lib/db";
-import { Op, fn, col } from "sequelize";
+﻿import { NextResponse } from "next/server";
+import { Molecule, ensureDbSynced } from "@/lib/db";
 
-// Standard atomic number mapping to convert PubChem IDs into CPK elements
 const ELEMENT_MAP: Record<number, string> = {
   1: "H",
   6: "C",
@@ -17,7 +15,6 @@ const ELEMENT_MAP: Record<number, string> = {
   30: "Zn",
 };
 
-// --- Fallback 3D structures for ionic/difficult lattices (e.g., NaCl, CaO, CaCO3) ---
 const IONIC_FALLBACKS: Record<string, { atoms: any[]; bonds: any[]; formula: string }> = {
   "sodium chloride": {
     formula: "NaCl",
@@ -52,15 +49,73 @@ const IONIC_FALLBACKS: Record<string, { atoms: any[]; bonds: any[]; formula: str
   },
 };
 
-/**
- * Helper to fetch and parse 3D structures on the fly from the PubChem PUG-REST API
- */
+function normalizeMoleculeName(value: string) {
+  return value.trim().toLowerCase().replace(/\s+/g, " ");
+}
+
+function normalizeRawMolecule(raw: any, fallbackName?: string) {
+  const atoms = Array.isArray(raw.atoms)
+    ? raw.atoms.map((atom: any) => {
+        const rawPos = Array.isArray(atom.position)
+          ? atom.position
+          : Array.isArray(atom.location)
+          ? atom.location
+          : atom.position || atom.location ||
+            (atom.x !== undefined || atom.y !== undefined || atom.z !== undefined
+              ? [Number(atom.x || 0), Number(atom.y || 0), Number(atom.z || 0)]
+              : [0, 0, 0]);
+
+        return {
+          element: atom.element || "X",
+          position: [
+            Number(rawPos[0] || 0),
+            Number(rawPos[1] || 0),
+            Number(rawPos[2] || 0),
+          ],
+          color: atom.color,
+        };
+      })
+    : [];
+
+  const bonds = Array.isArray(raw.bonds)
+    ? raw.bonds.map((bond: any) => {
+        const from = bond.from !== undefined
+          ? Number(bond.from)
+          : bond.source !== undefined
+          ? Number(bond.source)
+          : 0;
+        const to = bond.to !== undefined
+          ? Number(bond.to)
+          : bond.target !== undefined
+          ? Number(bond.target)
+          : 0;
+
+        let type: "single" | "double" | "triple" = "single";
+        const rawType = bond.type || "";
+        if (bond.order === 2 || rawType === "double") type = "double";
+        if (bond.order === 3 || rawType === "triple") type = "triple";
+
+        return { from, to, type };
+      })
+    : [];
+
+  return {
+    molecule: raw.molecule || fallbackName || "Unknown",
+    formula: raw.formula || "",
+    category: raw.category || "basic",
+    description: raw.description || "",
+    geometry: raw.geometry,
+    bondAngles: raw.bondAngles,
+    atoms,
+    bonds,
+  };
+}
+
 async function fetchMoleculeFromPubChem(name: string) {
-  const normalizedName = name.trim().toLowerCase();
-  
-  // Check our ionic presets first
+  const normalizedName = normalizeMoleculeName(name);
+
   if (IONIC_FALLBACKS[normalizedName]) {
-    return IONIC_FALLBACKS[normalizedName];
+    return normalizeRawMolecule({ ...IONIC_FALLBACKS[normalizedName], molecule: name }, name);
   }
 
   try {
@@ -76,175 +131,99 @@ async function fetchMoleculeFromPubChem(name: string) {
       throw new Error(`No compound record found in PubChem response for "${name}"`);
     }
 
-    // 1. Extract and map atoms
-    const atomsList: any[] = [];
     const elementNumArray = compound.atoms?.element || [];
     const aidArray = compound.atoms?.aid || [];
     const conformer = compound.coords?.[0]?.conformers?.[0];
-    const xCoords = conformer?.x || [];
-    const yCoords = conformer?.y || [];
-    const zCoords = conformer?.z || [];
+    const xCoords = Array.isArray(conformer?.x) ? conformer.x : [];
+    const yCoords = Array.isArray(conformer?.y) ? conformer.y : [];
+    const zCoords = Array.isArray(conformer?.z) ? conformer.z : [];
 
-    aidArray.forEach((aid: number, index: number) => {
-      const atomicNum = elementNumArray[index];
-      const elementSymbol = ELEMENT_MAP[atomicNum] || "X"; // Fallback identifier
-      atomsList.push({
-        element: elementSymbol,
-        x: xCoords[index] || 0.0,
-        y: yCoords[index] || 0.0,
-        z: zCoords[index] || 0.0,
-      });
-    });
+    const atomsList = aidArray.map((aid: number, index: number) => ({
+      element: ELEMENT_MAP[elementNumArray[index]] || "X",
+      position: [
+        Number(xCoords[index] || 0.0),
+        Number(yCoords[index] || 0.0),
+        Number(zCoords[index] || 0.0),
+      ],
+    }));
 
-    // 2. Extract and map bonds
-    const bondsList: any[] = [];
     const rawBonds = compound.bonds || {};
     const aid1 = rawBonds.aid1 || [];
     const aid2 = rawBonds.aid2 || [];
     const order = rawBonds.order || [];
 
-    aid1.forEach((id1: number, index: number) => {
-      const id2 = aid2[index];
-      const bondOrder = order[index] || 1;
-      // Convert 1-indexed PubChem IDs to 0-indexed for 3Dmol.js
-      bondsList.push({
-        source: id1 - 1,
-        target: id2 - 1,
-        order: bondOrder,
-      });
-    });
+    const bondsList = aid1.map((id1: number, index: number) => ({
+      source: id1 - 1,
+      target: (aid2[index] || 1) - 1,
+      order: order[index] || 1,
+    }));
 
-    // 3. Extract Chemical Formula
     const props = compound.props || [];
-    let formula = name;
     const formulaProp = props.find((p: any) => p.urn?.label === "Molecular Formula");
-    if (formulaProp) {
-      formula = formulaProp.value?.sval || name;
-    }
+    const formula = formulaProp?.value?.sval || name;
 
-    return {
-      atoms: atomsList,
-      bonds: bondsList,
-      formula,
-    };
+    return normalizeRawMolecule(
+      {
+        molecule: name,
+        formula,
+        category: "basic",
+        description: `PubChem-sourced structure for ${name}`,
+        atoms: atomsList,
+        bonds: bondsList,
+      },
+      name,
+    );
   } catch (err: any) {
     console.warn(`Failed to fetch dynamic 3D conformer for "${name}":`, err.message);
-    return null; // Graceful fallback
+    return null;
   }
 }
 
-export async function GET() {
-  try {
-    // 0. Ensure database tables are fully structural and ready
-    await ensureDbSynced();
+export async function GET(request: Request, context: { params: Promise<{ name: string }> }) {
+  const params = await context.params
+  const requestedName = params?.name;
+  if (!requestedName) {
+    return NextResponse.json({ error: "Molecule name is required" }, { status: 400 });
+  }
 
-    // 1. Fetch all reactions from the database
-    const reactions = await Reaction.findAll();
+  await ensureDbSynced();
+  const normalizedName = normalizeMoleculeName(requestedName);
 
-    // 2. Extract all unique molecule names (lowercased for uniform matching)
-    const moleculeNamesSet = new Set<string>();
-    reactions.forEach((reaction) => {
-      const reactants = (reaction.reactants as any[]) || [];
-      const products = (reaction.products as any[]) || [];
+  const moleculeRecord = await Molecule.findOne({
+    where: { molecule: normalizedName },
+  });
 
-      reactants.forEach((r) => r.molecule && moleculeNamesSet.add(r.molecule.trim().toLowerCase()));
-      products.forEach((p) => p.molecule && moleculeNamesSet.add(p.molecule.trim().toLowerCase()));
-    });
-
-    const uniqueMoleculeNames = Array.from(moleculeNamesSet);
-
-    // 3. Fetch existing 3D coordinate data with complete case-insensitive queries using LOWER()
-    const moleculeRecords = await Molecule.findAll({
-      where: {
-        molecule: {
-          [Op.in]: uniqueMoleculeNames,
-        },
-      },
-    });
-
-    // Map existing records to local dictionary using lowercased keys
-    const moleculeDataMap: Record<string, { atoms: any; bonds: any; formula?: string }> = {};
-    moleculeRecords.forEach((m: any) => {
-      const key = m.molecule.trim().toLowerCase();
-      moleculeDataMap[key] = {
-        atoms: m.atoms,
-        bonds: m.bonds,
-        formula: m.formula,
-      };
-    });
-
-    // Find which molecules are completely missing from our cache
-    const missingMoleculeNames = uniqueMoleculeNames.filter(
-      (name) => !moleculeDataMap[name]
+  let moleculeData: any = null;
+  if (moleculeRecord) {
+    moleculeData = normalizeRawMolecule(
+      { ...moleculeRecord.get({ plain: true }), molecule: moleculeRecord.molecule },
+      requestedName,
     );
-
-    // 4. Resolve missing molecules dynamically via PubChem/Fallbacks and Cache them
-    if (missingMoleculeNames.length > 0) {
-      const resolvePromises = missingMoleculeNames.map(async (name) => {
-        const pubChemData = await fetchMoleculeFromPubChem(name);
-        if (pubChemData) {
-          try {
-            // Write to our local MySQL database with 'upsert' to gracefully avoid duplicate keys
-            // We store the molecule name as lowercase to match our dictionary key structure
-            await Molecule.upsert({
-              molecule: name.trim().toLowerCase(),
-              formula: pubChemData.formula,
-              category: "basic",
-              description: `Dynamically compiled 3D data structure for ${name}.`,
-              atoms: pubChemData.atoms,
-              bonds: pubChemData.bonds,
-            });
-
-            // Update our request resolver map
-            moleculeDataMap[name.trim().toLowerCase()] = {
-              atoms: pubChemData.atoms,
-              bonds: pubChemData.bonds,
-              formula: pubChemData.formula,
-            };
-            console.log(`Successfully cached dynamically fetched molecule: "${name}"`);
-          } catch (dbErr: any) {
-            console.error(`Failed to store fetched molecule "${name}" to database:`, dbErr.message);
-          }
-        }
-      });
-
-      // Wait for all missing coordinate records to be resolved
-      await Promise.all(resolvePromises);
+  } else {
+    const pubChemData = await fetchMoleculeFromPubChem(requestedName);
+    if (pubChemData) {
+      moleculeData = pubChemData;
+      try {
+        await Molecule.upsert({
+          molecule: normalizedName,
+          formula: moleculeData.formula || requestedName,
+          category: moleculeData.category,
+          description: moleculeData.description,
+          atoms: moleculeData.atoms,
+          bonds: moleculeData.bonds,
+        });
+      } catch (dbErr: any) {
+        console.error(`Failed to cache fetched molecule "${requestedName}" to database:`, dbErr.message);
+      }
     }
+  }
 
-    // 5. Attach resolved 3D data to each reaction's reactants and products
-    const enrichedReactions = reactions.map((reaction) => {
-      const plainReaction = reaction.get({ plain: true });
-
-      const enrichedReactants = ((plainReaction.reactants as any[]) || []).map((r) => {
-        const key = r.molecule ? r.molecule.trim().toLowerCase() : "";
-        return {
-          ...r,
-          data: moleculeDataMap[key] || null, // Delivers the coordinates directly
-        };
-      });
-
-      const enrichedProducts = ((plainReaction.products as any[]) || []).map((p) => {
-        const key = p.molecule ? p.molecule.trim().toLowerCase() : "";
-        return {
-          ...p,
-          data: moleculeDataMap[key] || null,
-        };
-      });
-
-      return {
-        ...plainReaction,
-        reactants: enrichedReactants,
-        products: enrichedProducts,
-      };
-    });
-
-    return NextResponse.json({ reactions: enrichedReactions }, { status: 200 });
-  } catch (error: any) {
-    console.error("Error fetching and enriching reactions:", error);
+  if (!moleculeData || !Array.isArray(moleculeData.atoms)) {
     return NextResponse.json(
-      { error: "Failed to fetch reactions", details: error.message },
-      { status: 500 }
+      { error: "NOT_FOUND", message: `No structure found for ${requestedName}` },
+      { status: 404 },
     );
   }
+
+  return NextResponse.json(moleculeData, { status: 200 });
 }

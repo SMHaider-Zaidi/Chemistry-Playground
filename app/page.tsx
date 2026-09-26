@@ -145,7 +145,7 @@ export default function HomePage() {
       {/* Footer */}
       <footer className="border-t py-8 px-4">
         <div className="container mx-auto text-center text-sm text-muted-foreground">
-          <p>&copy; 2024 Chemistry Playground. Built for students, by Education Global - IT Team.</p>
+          <p>&copy; 2026 Chemistry Playground. Built for students, by Education Global - IT Team.</p>
         </div>
       </footer>
     </div>

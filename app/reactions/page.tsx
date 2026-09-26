@@ -38,6 +38,20 @@ type ReactionRecord = {
   products: ReactionEntry[];
 };
 
+// Helper for accurate Organic vs Inorganic classification
+const isOrganicReaction = (r: ReactionRecord): boolean => {
+  const cat = r.category?.toLowerCase().trim() || "";
+  if (cat.includes("inorganic")) return false;
+  if (cat.includes("organic")) return true;
+
+  const entries = [...(r.reactants || []), ...(r.products || [])];
+  return entries.some((entry) => {
+    const formulas = [entry.molecule, entry.data?.formula].filter(Boolean).join(" ");
+    const elements: string[] = formulas.match(/[A-Z][a-z]?/g) || [];
+    return elements.includes("C") && elements.includes("H");
+  });
+};
+
 function MoleculeViewer({ data, name }: { data: MoleculeData | null; name: string }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isScriptLoaded, setIsScriptLoaded] = useState(false);
@@ -51,6 +65,12 @@ function MoleculeViewer({ data, name }: { data: MoleculeData | null; name: strin
       return;
     }
 
+    const existingScript = document.querySelector('script[src*="3Dmol"]');
+    if (existingScript) {
+      existingScript.addEventListener("load", () => setIsScriptLoaded(true));
+      return;
+    }
+
     const script = document.createElement("script");
     script.src = "https://cdnjs.cloudflare.com/ajax/libs/3Dmol/2.5.3/3Dmol-min.js";
     script.async = true;
@@ -59,7 +79,9 @@ function MoleculeViewer({ data, name }: { data: MoleculeData | null; name: strin
     document.body.appendChild(script);
 
     return () => {
-      script.remove();
+      if (document.body.contains(script)) {
+        script.remove();
+      }
     };
   }, []);
 
@@ -112,27 +134,25 @@ function MoleculeViewer({ data, name }: { data: MoleculeData | null; name: strin
     viewer.setStyle(
       {},
       {
-        stick: {
-          radius: 0.15,
-          colorscheme: "Jmol",
-        },
-        sphere: {
-          scale: 0.3,
-          colorscheme: "Jmol",
-        },
+        stick: { radius: 0.15, colorscheme: "Jmol" },
+        sphere: { scale: 0.3, colorscheme: "Jmol" },
       }
     );
 
     viewer.zoomTo();
     viewer.render();
 
-    const interval = window.setInterval(() => {
+    let animationFrameId: number;
+    const animate = () => {
       viewer.rotate(0.5, "y");
       viewer.render();
-    }, 30);
+      animationFrameId = requestAnimationFrame(animate);
+    };
+
+    animationFrameId = requestAnimationFrame(animate);
 
     return () => {
-      window.clearInterval(interval);
+      cancelAnimationFrame(animationFrameId);
       containerRef.current?.replaceChildren();
     };
   }, [data, isScriptLoaded]);
@@ -166,7 +186,7 @@ export default function ReactionSimulatorPage() {
   const [activeTab, setActiveTab] = useState<"organic" | "inorganic">("organic");
   const [isReacting, setIsReacting] = useState(false);
   const [hasReacted, setHasReacted] = useState(false);
-  const transitionTimerRef = useRef<number | null>(null);
+  const transitionTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     async function fetchReactions() {
@@ -174,8 +194,14 @@ export default function ReactionSimulatorPage() {
         const response = await fetch("/api/reactions");
         const data = await response.json();
         if (data.reactions?.length) {
-          setReactions(data.reactions);
-          setSelectedReaction(data.reactions[0]);
+          const fetchedReactions: ReactionRecord[] = data.reactions;
+          setReactions(fetchedReactions);
+
+          const firstOrganic = fetchedReactions.find((r) => isOrganicReaction(r));
+          const initialReaction = firstOrganic || fetchedReactions.find((r) => !isOrganicReaction(r));
+          const initialTab = initialReaction && isOrganicReaction(initialReaction) ? "organic" : "inorganic";
+          setActiveTab(initialTab);
+          setSelectedReaction(initialReaction || null);
         }
       } catch (error) {
         console.error("Failed to fetch reactions", error);
@@ -188,77 +214,66 @@ export default function ReactionSimulatorPage() {
 
     return () => {
       if (transitionTimerRef.current) {
-        window.clearTimeout(transitionTimerRef.current);
+        clearTimeout(transitionTimerRef.current);
       }
     };
   }, []);
 
-  // Compute category counts
   const categoryCounts = useMemo(() => {
     let organic = 0;
     let inorganic = 0;
 
     reactions.forEach((r) => {
-      const cat = r.category?.toLowerCase() || "";
-      if (cat.includes("organic") && !cat.includes("inorganic")) {
+      if (isOrganicReaction(r)) {
         organic++;
-      } else if (cat.includes("inorganic")) {
-        inorganic++;
       } else {
-        const isOrganic = r.reactants?.some((rec) => rec.molecule.includes("C") && rec.molecule.includes("H"));
-        if (isOrganic) organic++;
-        else inorganic++;
+        inorganic++;
       }
     });
 
     return { organic, inorganic };
   }, [reactions]);
 
-  // Filter reactions based on active tab (Organic or Inorganic) and search query
   const filteredReactions = useMemo(() => {
     return reactions.filter((r) => {
-      // 1. Filter strictly by active tab
-      const cat = r.category?.toLowerCase() || "";
-      let matchesTab = false;
-
-      if (activeTab === "organic") {
-        matchesTab = cat.includes("organic") && !cat.includes("inorganic");
-        if (!cat) {
-          matchesTab = r.reactants?.some((rec) => rec.molecule.includes("C") && rec.molecule.includes("H"));
-        }
-      } else if (activeTab === "inorganic") {
-        matchesTab = cat.includes("inorganic");
-        if (!cat) {
-          matchesTab = !r.reactants?.some((rec) => rec.molecule.includes("C") && rec.molecule.includes("H"));
-        }
-      }
+      const isOrganic = isOrganicReaction(r);
+      const matchesTab = activeTab === "organic" ? isOrganic : !isOrganic;
 
       if (!matchesTab) return false;
 
-      // 2. Filter by Search Query
       if (!searchQuery.trim()) return true;
       const q = searchQuery.toLowerCase().trim();
 
-      const matchName = r.name?.toLowerCase().includes(q);
-      const matchReactants = r.reactants?.some((item) =>
-        item.molecule?.toLowerCase().includes(q)
+      return (
+        r.name?.toLowerCase().includes(q) ||
+        r.reactants?.some((item) => item.molecule?.toLowerCase().includes(q)) ||
+        r.products?.some((item) => item.molecule?.toLowerCase().includes(q)) ||
+        r.category?.toLowerCase().includes(q)
       );
-      const matchProducts = r.products?.some((item) =>
-        item.molecule?.toLowerCase().includes(q)
-      );
-      const matchCategory = r.category?.toLowerCase().includes(q);
-
-      return matchName || matchReactants || matchProducts || matchCategory;
     });
   }, [reactions, activeTab, searchQuery]);
 
+  const handleTabChange = (tab: "organic" | "inorganic") => {
+    setActiveTab(tab);
+    setSearchQuery("");
+    setHasReacted(false);
+    setIsReacting(false);
+
+    // Auto-select first matching item for the new tab
+    const firstMatching = reactions.find((r) =>
+      tab === "organic" ? isOrganicReaction(r) : !isOrganicReaction(r)
+    );
+
+    setSelectedReaction(firstMatching || null);
+  };
+
   const handleSimulate = () => {
     if (transitionTimerRef.current) {
-      window.clearTimeout(transitionTimerRef.current);
+      clearTimeout(transitionTimerRef.current);
     }
 
     setIsReacting(true);
-    transitionTimerRef.current = window.setTimeout(() => {
+    transitionTimerRef.current = setTimeout(() => {
       setIsReacting(false);
       setHasReacted(true);
     }, 1400);
@@ -266,7 +281,7 @@ export default function ReactionSimulatorPage() {
 
   const handleReset = () => {
     if (transitionTimerRef.current) {
-      window.clearTimeout(transitionTimerRef.current);
+      clearTimeout(transitionTimerRef.current);
     }
     setIsReacting(false);
     setHasReacted(false);
@@ -299,7 +314,6 @@ export default function ReactionSimulatorPage() {
         </div>
 
         <div className="grid gap-8 lg:grid-cols-4">
-          {/* SIDEBAR COMPONENT */}
           <div className="flex flex-col gap-4 lg:col-span-1">
             <div className="rounded-xl border bg-card p-5 shadow-sm">
               <div className="mb-3 flex items-center justify-between">
@@ -309,13 +323,9 @@ export default function ReactionSimulatorPage() {
                 </span>
               </div>
 
-              {/* ORGANIC / INORGANIC ONLY TOGGLE (GRID-COLS-2) */}
               <div className="mb-3 grid grid-cols-2 gap-1 rounded-lg bg-muted p-1 text-center text-xs font-medium">
                 <button
-                  onClick={() => {
-                    setActiveTab("organic");
-                    setSearchQuery("");
-                  }}
+                  onClick={() => handleTabChange("organic")}
                   className={`rounded-md py-1.5 transition-all ${
                     activeTab === "organic"
                       ? "bg-background text-primary shadow-xs font-bold"
@@ -325,10 +335,7 @@ export default function ReactionSimulatorPage() {
                   Organic ({categoryCounts.organic})
                 </button>
                 <button
-                  onClick={() => {
-                    setActiveTab("inorganic");
-                    setSearchQuery("");
-                  }}
+                  onClick={() => handleTabChange("inorganic")}
                   className={`rounded-md py-1.5 transition-all ${
                     activeTab === "inorganic"
                       ? "bg-background text-primary shadow-xs font-bold"
@@ -339,7 +346,6 @@ export default function ReactionSimulatorPage() {
                 </button>
               </div>
 
-              {/* SEARCH BAR */}
               <div className="relative mb-3">
                 <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
                 <input
@@ -398,7 +404,6 @@ export default function ReactionSimulatorPage() {
             </div>
           </div>
 
-          {/* MAIN SIMULATION VIEWPORT */}
           <div className="flex flex-col gap-6 lg:col-span-3">
             {selectedReaction ? (
               <>
@@ -408,7 +413,7 @@ export default function ReactionSimulatorPage() {
                       {selectedReaction.name}
                     </h2>
                     {selectedReaction.category && (
-                      <Badge variant="secondary" className="px-3 py-1">
+                      <Badge variant="secondary" className="px-3 py-1 capitalize">
                         {selectedReaction.category}
                       </Badge>
                     )}
@@ -438,7 +443,6 @@ export default function ReactionSimulatorPage() {
                         </h4>
                       </div>
 
-                      {/* DYNAMIC FLEX GRID FOR MULTI-REACTANTS */}
                       <div className="flex flex-wrap items-center justify-center gap-6 py-4">
                         {selectedReaction.reactants.map((reactant, index) => (
                           <div
@@ -480,7 +484,6 @@ export default function ReactionSimulatorPage() {
                         </h4>
                       </div>
 
-                      {/* DYNAMIC FLEX GRID FOR MULTI-PRODUCTS */}
                       <div className="flex flex-wrap items-center justify-center gap-6 py-4">
                         {stageMolecules?.map((molecule, index) => (
                           <div

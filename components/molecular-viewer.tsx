@@ -159,8 +159,8 @@ export function MolecularViewer() {
                   <div>• <b>Formula:</b> {currentMolecule.formula}</div>
                   <div>• <b>Geometry:</b> {currentMolecule.geometry || "Determining..."}</div>
                   <div>• <b>Bond Angles:</b> {currentMolecule.bondAngles || "Determining..."}</div>
-                  <div>• <b>Atoms:</b> {currentMolecule.atoms.length}</div>
-                  <div>• <b>Bonds:</b> {currentMolecule.bonds.length}</div>
+                  <div>• <b>Atoms:</b> {currentMolecule.atoms?.length ?? 0}</div>
+                  <div>• <b>Bonds:</b> {currentMolecule.bonds?.length ?? 0}</div>
                 </div>
               )}
 

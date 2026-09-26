@@ -9,6 +9,8 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Label } from "@/components/ui/label"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { CheckCircle, XCircle, RotateCcw, Trophy, Target, Lock, Loader2 } from "lucide-react"
+import { useRouter } from "next/navigation"
+import { useAuth } from "@/contexts/auth-context"
 
 interface Question {
   id: string
@@ -103,12 +105,17 @@ function QuestionCard({
 }
 
 function QuizViewer({ chapter, onBack }: { chapter: Chapter; onBack: () => void }) {
+  const router = useRouter()
+  const { user } = useAuth()
   const [questions, setQuestions] = useState<Question[]>([])
   const [loading, setLoading] = useState(true)
   const [currentIndex, setCurrentIndex] = useState(0)
   const [answers, setAnswers] = useState<{ [key: string]: number }>({})
   const [showResults, setShowResults] = useState(false)
   const [quizCompleted, setQuizCompleted] = useState(false)
+  const [score, setScore] = useState(0)
+  const [submitting, setSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState<string | null>(null)
 
   useEffect(() => {
     async function loadQuestions() {
@@ -145,25 +152,53 @@ function QuizViewer({ chapter, onBack }: { chapter: Chapter; onBack: () => void 
   const currentQuestion = questions[currentIndex]
   const progress = ((currentIndex + 1) / questions.length) * 100
 
-  const handleNext = () => {
+  const handleCheckAnswer = () => {
+    if (showResults || answers[currentQuestion.id] === undefined) return
+
+    if (answers[currentQuestion.id] === currentQuestion.correctAnswer) {
+      setScore((currentScore) => currentScore + 1)
+    }
+    setShowResults(true)
+  }
+
+  const handleNext = async () => {
     if (currentIndex < questions.length - 1) {
       setCurrentIndex(currentIndex + 1)
       setShowResults(false)
     } else {
-      setQuizCompleted(true)
+      setSubmitting(true)
+      setSubmitError(null)
+
+      try {
+        const response = await fetch("/api/quizzes/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            userId: user?.id,
+            quizId: chapter.id,
+            chapterName: chapter.title,
+            score,
+            totalQuestions: questions.length,
+          }),
+        })
+
+        if (!response.ok) {
+          throw new Error("Failed to submit quiz")
+        }
+
+        setQuizCompleted(true)
+        router.push("/dashboard")
+      } catch (error) {
+        console.error("Failed to submit quiz:", error)
+        setSubmitError("Quiz submission failed. Please try again.")
+      } finally {
+        setSubmitting(false)
+      }
     }
   }
 
-  const calculateScore = () => {
-    let correct = 0
-    questions.forEach((q) => {
-      if (answers[q.id] === q.correctAnswer) correct++
-    })
-    return Math.round((correct / questions.length) * 100)
-  }
-
-  const score = calculateScore()
-  const passed = score >= 70
+  const percentage = Math.round((score / questions.length) * 100)
+  const passed = percentage >= 70
 
   if (quizCompleted) {
     return (
@@ -173,16 +208,16 @@ function QuizViewer({ chapter, onBack }: { chapter: Chapter; onBack: () => void 
             {passed ? <Trophy className="h-16 w-16 text-yellow-500" /> : <Target className="h-16 w-16 text-blue-500" />}
           </div>
           <CardTitle className="text-2xl font-serif">{passed ? "Congratulations!" : "Keep Practicing!"}</CardTitle>
-          <CardDescription>You scored {score}% on Chapter {chapter.chapter_number}: {chapter.title}</CardDescription>
+          <CardDescription>You scored {percentage}% on Chapter {chapter.chapter_number}: {chapter.title}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4 text-center">
-          <div className="text-3xl font-bold">{score}%</div>
+          <div className="text-3xl font-bold">{percentage}%</div>
           <p className="text-sm text-muted-foreground">
             {questions.filter((q) => answers[q.id] === q.correctAnswer).length} out of {questions.length} correct
           </p>
           <div className="flex justify-center gap-4 mt-6">
             <Button onClick={onBack} variant="outline">Back to Quizzes</Button>
-            <Button onClick={() => { setCurrentIndex(0); setAnswers({}); setShowResults(false); setQuizCompleted(false); }}>
+            <Button onClick={() => { setCurrentIndex(0); setAnswers({}); setScore(0); setShowResults(false); setQuizCompleted(false); setSubmitError(null); }}>
               <RotateCcw className="h-4 w-4 mr-2" /> Retake Quiz
             </Button>
           </div>
@@ -211,24 +246,31 @@ function QuizViewer({ chapter, onBack }: { chapter: Chapter; onBack: () => void 
         isCorrect={showResults && answers[currentQuestion.id] === currentQuestion.correctAnswer}
       />
 
-      <div className="flex items-center justify-between">
-        <Button variant="outline" onClick={() => { setCurrentIndex(currentIndex - 1); setShowResults(false); }} disabled={currentIndex === 0}>
-          Previous
-        </Button>
+      <div className="flex justify-end">
         <div className="flex gap-2">
-          {!showResults && answers[currentQuestion.id] !== undefined && (
-            <Button onClick={() => setShowResults(true)} variant="secondary">Check Answer</Button>
+          {!showResults && (
+            <Button
+              onClick={handleCheckAnswer}
+              variant="secondary"
+              disabled={answers[currentQuestion.id] === undefined}
+            >
+              Check Answer
+            </Button>
           )}
-          <Button onClick={handleNext} disabled={answers[currentQuestion.id] === undefined}>
-            {currentIndex === questions.length - 1 ? "Finish Quiz" : "Next"}
-          </Button>
+          {showResults && (
+            <Button onClick={handleNext} disabled={submitting}>
+              {submitting ? <Loader2 className="h-4 w-4 mr-2 animate-spin" /> : null}
+              {currentIndex === questions.length - 1 ? "Submit Quiz" : "Next"}
+            </Button>
+          )}
         </div>
       </div>
+      {submitError && <p className="text-right text-sm text-destructive">{submitError}</p>}
     </div>
   )
 }
 
-export function QuizSystem() {
+export function QuizSystem({ initialChapterId }: { initialChapterId?: number } = {}) {
   const [selectedClass, setSelectedClass] = useState<string>("9")
   const [chapters, setChapters] = useState<Chapter[]>([])
   const [selectedChapter, setSelectedChapter] = useState<Chapter | null>(null)
@@ -240,7 +282,12 @@ export function QuizSystem() {
       try {
         const res = await fetch(`/api/quizzes`)
         const data = await res.json()
-        setChapters(data.chapters || [])
+        const fetchedChapters = data.chapters || []
+        setChapters(fetchedChapters)
+        if (initialChapterId) {
+          const initialChapter = fetchedChapters.find((chapter: Chapter) => chapter.id === initialChapterId)
+          if (initialChapter) setSelectedChapter(initialChapter)
+        }
       } catch (err) {
         console.error("Failed to load chapters:", err)
       } finally {
@@ -248,7 +295,7 @@ export function QuizSystem() {
       }
     }
     fetchChapters()
-  }, [])
+  }, [initialChapterId])
 
   if (selectedChapter) {
     return (

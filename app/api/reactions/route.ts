@@ -363,6 +363,10 @@ export async function GET() {
 
       return {
         ...plainReaction,
+        category:
+          typeof plainReaction.category === "string" && plainReaction.category.trim()
+            ? plainReaction.category.trim().toLowerCase()
+            : undefined,
         reactants: enrichedReactants,
         products: enrichedProducts,
       };
