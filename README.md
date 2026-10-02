@@ -33,6 +33,14 @@
 * **Normalized Data Architecture:** Scalable schema designed to store molecular formulas, structured JSON coordinate payloads, multi-step reaction sequences, and compound classifications.
 * **Automated Integrity Auditing:** Dedicated scripting pipelines that validate atomic coordinate structures, clean chemical payloads, and handle data seeding across hundreds of complex compounds.
 
+### 📝 Interactive Quiz Engine
+- **Linear Step-by-Step Testing:** Single-question focus with real-time response validation and automated scoring to prevent backtracking and maintain quiz integrity.
+- **Chapter-Wise Evaluation:** Target specific topics across general, organic, and inorganic chemistry with custom difficulty levels.
+
+### 📈 Student Performance Dashboard
+- **Comprehensive Analytics:** Tracks completed quiz history, average scores, and percentage badges directly linked to student accounts.
+- **Targeted Insights:** Highlights topic mastery and performance metrics to help students identify strengths and areas for revision.
+
 ---
 
 ## 🔮 Future Implementations & Roadmap
@@ -41,7 +49,3 @@ We are actively expanding Chemistry Playground into a full-scale interactive lea
 * 🔐 User & Educator Portal (In Active Development)
 
 * Role-Based Authentication: Dedicated portals for students and instructors with secure login and profile management.
-
-* Custom Dashboards: Personalized workspaces to track learning progress, bookmarked molecular structures, and saved reaction pathways.
-
-* Interactive Assignment & Quiz Engine: Instructor tools to build custom chemistry quizzes, auto-grade spatial identification tasks, and monitor analytics.
